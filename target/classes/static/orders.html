@@ -1,0 +1,108 @@
+<main>
+    <div class="row">
+        <div>
+            <select class="form-control" id="select-order-type">
+                <option value="ALL">Wszystkie</option>
+                <option value="REPORTS">Zgłoszenia</option>
+                <option value="NEW_ARTICLES">Nowi</option>
+            </select>
+        </div>
+        <div>
+            <input id="button-filter-orders" class="btn btn-secondary" type="button" value="Filtruj">
+        </div>
+    </div>
+    <div class="gap-vertical-5"></div>
+    <div class="gap-vertical-5"></div>
+
+    <div id="div-orders-to-report" style="display: none">
+        <span>Zamówienia do zgłoszenia</span>
+        <table id="table-of-orders-to-report" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Oddział</th>
+                <th>Zakład</th>
+                <th>Szafka</th>
+                <th>Pracownik</th>
+                <th>Dotyczy sztuk</th>
+                <th>Typ zlecenia</th>
+                <th>Rozmiar</th>
+                <th>Ubranie do wydania</th>
+                <th>Nr art.</th>
+                <th>Obecne ubranie</th>
+                <th>Nr art.</th>
+                <th>Utworzono</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="row-template" style="display: none">
+                <td class="cell-department-name"></td>
+                <td class="cell-plant-number"></td>
+                <td class="cell-locker-and-box-number"></td>
+                <td class="cell-employee"></td>
+                <td class="cell-clothes-ordinal-numbers"></td>
+                <td class="cell-order-type"></td>
+                <td class="cell-desired-size"></td>
+                <td class="cell-desired-article-name"></td>
+                <td class="cell-desired-article-number"></td>
+                <td class="cell-actual-article-name"></td>
+                <td class="cell-actual-article-number"></td>
+                <td class="cell-creation-date"></td>
+                <td class="td-button"><input type="button" value="Zgłoszone"
+                                             class="button-set-order-as-reported btn btn-outline-danger"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="header-row col-sm-5">
+            <button id="button-get-report-for-all-orders" class="btn btn-danger" type="button">Wszystkie zamówienia
+            </button>
+            <button id="button-get-report-for-new-employees" class="btn btn-secondary" type="button">Nowi pracownicy
+            </button>
+            <button id="button-get-report-with-employees-and-clothes-with-quantities" class="btn btn-secondary"
+                    type="button">Zestawienie ilościowe
+            </button>
+        </div>
+    </div>
+
+    <div id="div-orders-to-realize" style="display: none">
+        <span>Do wydania</span>
+        <table id="table-of-orders-to-realize" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Oddział</th>
+                <th>Zakład</th>
+                <th>Szafa</th>
+                <th>Box</th>
+                <th>Pracownik</th>
+                <th>Dotyczy sztuk</th>
+                <th>Typ zlecenia</th>
+                <th>Rozmiar</th>
+                <th>Ubranie do wydania</th>
+                <th>Nr art.</th>
+                <th>Obecne ubranie</th>
+                <th>Nr art.</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="row-template-for-odrers-to-realize" style="display: none">
+                <td class="cell-department-name" style="display: none"></td>
+                <td class="cell-plant-number"></td>
+                <td class="cell-locker-number"></td>
+                <td class="cell-box-number"></td>
+                <td class="cell-employee"></td>
+                <td class="cell-clothes-ordinal-numbers"></td>
+                <td class="cell-order-type"></td>
+                <td class="cell-desired-size"></td>
+                <td class="cell-desired-cloth-name"></td>
+                <td class="cell-desired-article-number"></td>
+                <td class="cell-actual-cloth"></td>
+                <td class="cell-actual-article-number"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<script src="js/orders.js" defer></script>

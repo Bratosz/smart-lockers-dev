@@ -1,0 +1,135 @@
+<main>
+    <style>
+        #left-block {
+            vertical-align: top;
+        }
+
+        #right-block {
+            vertical-align: top;
+            margin-left: 50px;
+        }
+
+        .cell-plant-locations {
+            max-width: 300px;
+        }
+
+        .div-form-row {
+            padding: 1px;
+        }
+
+        .div-input {
+            width: 380px;
+        }
+
+        .select-medium {
+            width: 175px;
+        }
+
+        p {
+            margin-bottom: 1px;
+            font-size: 12px;
+        }
+
+        #my-drop-box {
+            margin-top: 20px;
+            width: 300px;
+            height: 300px;
+            border: 3px dashed black;
+        }
+    </style>
+
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="input-group">
+                <select id="select-client" class="form-control"></select>
+                <button type="button" class="btn btn-secondary" id="button-load-client">Załaduj</button>
+            </div>
+            <br>
+            <br>
+            <div class="input-group">
+                <input id="input-client-name" class="form-control" type="text" placeholder="Nazwa klienta">
+                <button type="button" id="button-create-client" class="btn btn-danger">Utwórz</button>
+            </div>
+            <p>Zakład</p>
+            <div class="input-group">
+                <input id="input-plant-name" class="form-control col-sm-4" type="text" placeholder="Nazwa">
+                <input id="input-plant-number-for-create" class="form-control col-sm-1" type="number" placeholder="Nr">
+                <input id="input-plant-login" class="form-control col-sm-2" type="text" placeholder="Login">
+                <input id="input-plant-password" class="form-control col-sm-2"
+                       type="password" placeholder="Hasło">
+                <input id="input-plant-password-confirmation" class="form-control col-sm-2"
+                       type="password" placeholder="Powtórz">
+                <button id="button-create-plant" class="btn btn-outline-danger" type="button">Dodaj</button>
+            </div>
+            <p>Oddział</p>
+            <div class="input-group">
+                <input id="input-department-name" class="form-control"
+                       type="text" placeholder="Nazwa">
+                <select id="select-plant-for-department" class="form-control">
+                    <option>Wybierz domyślny zakład</option>
+                </select>
+                <button id="button-create-department" class="btn btn-outline-danger" type="button">Dodaj</button>
+            </div>
+            <p>Lokalizacja</p>
+            <div class="input-group">
+                <input id="input-location-name" class="form-control" type="text" placeholder="Nazwa">
+                <select id="select-plant-for-location" class="form-control">
+                    <option>Wybierz zakład</option>
+                </select>
+                <button id="button-create-location" class="btn btn-outline-danger" type="button">Dodaj</button>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <!--CLIENT DATA-->
+            <div>
+                <div class="display-inline height-40 align-top"><span>Nazwa klienta:</span></div>
+                <div class="display-inline text-big height-40 align-top" id="div-client-name">
+                    <span class="text-big"></span>
+                </div>
+            </div>
+            <!--PLANTS TABLE-->
+            <div>
+                <table id="table-of-plants" class="table-striped" style="display: none">
+                    <thead>
+                    <th>Numer</th>
+                    <th>Nazwa</th>
+                    <th>Login</th>
+                    <th>Lokalizacje</th>
+                    </thead>
+                    <tbody id="table-of-plants-body" class="table table-striped">
+                    <tr id="row-template" style="display: none">
+                        <td class="cell-plant-number"></td>
+                        <td class="cell-plant-name"></td>
+                        <td class="cell-plant-login"></td>
+                        <td class="cell-plant-locations">
+                            <ul class="list">
+                                <li id="li-template" class="list-element" style="display: none"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!--DEPARTMENTS TABLE-->
+            <div>
+                <table id="table-of-departments" class="table-striped" style="display: none">
+                    <thead>
+                    <th>Nazwa oddziału</th>
+                    <th>Główny zakład</th>
+                    </thead>
+                    <tbody>
+                    <tr id="row-template-departments-table" style="display: none">
+                        <td class="cell-department-name"></td>
+                        <td class="cell-main-plant-number"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</main>
+<script src="js/create-client.js" defer></script>
+

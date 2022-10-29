@@ -1,0 +1,41 @@
+#left-block {
+    vertical-align: top;
+    width: 600px;
+}
+
+#right-block {
+    vertical-align: top;
+    width: 300px;
+
+}
+
+
+#select-department {
+    width: 200px;
+}
+
+#select-position {
+    width: 200px;
+}
+
+#input-position-name {
+    width: 200px;
+}
+
+.select-article {
+  width: 120px;
+}
+
+.select-another-article {
+    width: 140px;
+}
+
+.inputs {
+    width: 200px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.div-form-row {
+    padding: 3px;
+}

@@ -1,0 +1,56 @@
+<main>
+
+    <span id="employee-info"></span>
+    <br>
+    <br>
+
+    <div class="headerRow">
+        <div class="col-lg-4">
+            <!--POSITION AND DEPARTMENT SELECTION-->
+            <form class="form-inline">
+                <div class="form-group">
+                    <select class="form-control" id="select-department"></select>
+                    <select class="form-control" id="select-position"></select>
+                    <button type="button" class="btn btn-secondary" id="button-edit-department-and-position">Zmień</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <table id="table-of-clothes-selection" class="col-sm-8">
+            <thead>
+            <tr>
+                <th>Rodzaj</th>
+                <th>Rozmiar</th>
+                <th>Długość</th>
+                <th>Ilość</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="row-template" class="row" style="display: none">
+                <td class="cell-select-article">
+                    <select class="form-control select-article"></select>
+                </td>
+                <td class="cell-select-size col-sm-1">
+                    <input type="text" class="form-control input-size">
+                </td>
+                <td class="cell-select-length-modification col-sm-2">
+                    <input type="text" placeholder="N100/R100"
+                           class="form-control input-length-modification">
+                </td>
+                <td class="cell-select-quantity col-sm-1">
+                    <input type="number" class="form-control input-quantity">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <button type="button" class="btn btn-danger" id="button-order-clothes">Zamów</button>
+        <button type="button" class="btn btn-secondary" id="button-view-employee">Pokaż pracownika</button>
+    </div>
+
+</main>
+<script src="js/add-clothes.js" defer></script>

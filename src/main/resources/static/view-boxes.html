@@ -1,0 +1,71 @@
+<main>
+    <div class="headerRow">
+        <div class="col-lg-4">
+            <form class="form-inline">
+                <div class="form-group">
+                    <input type="text" id="input-locker-number" class="form-control"
+                           placeholder="Numer szafki">
+                    <button class="btn btn-secondary" type="button"
+                            id="button-get-boxes-by-locker-number-and-plant-id">Szukaj
+                    </button>
+                    <select class="form-control" id="select-plant"></select>
+                    <select class="form-control" id="select-department"></select>
+                    <select class="form-control" id="select-location"></select>
+                    <select class="form-control" id="select-box-status">
+                        <option value="ALL">Status szafki</option>
+                        <option value="OCCUPY">Zajęta</option>
+                        <option value="FREE">Wolna</option>
+                    </select>
+                    <button type="button" class="btn btn-secondary" id="button-filter">Filtruj</button>
+                    <p class="lead" style="margin-bottom: 6px; margin-left: 8px">Boxów:</p>
+                    <p class="lead" id="amount-of-boxes" style="margin-bottom: 6px; margin-left: 4px"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br>
+    <table class="table col-10 table-striped" id="table-of-boxes">
+        <thead>
+        <tr>
+            <th>Nazwisko</th>
+            <th>Imię</th>
+            <th>Szafa</th>
+            <th>Box</th>
+            <th>Numer zakładu</th>
+            <th>Oddział</th>
+            <th>Lokalizacja</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr id="row-template" style="display: none">
+            <td class="cell-last-name"></td>
+            <td class="cell-first-name"></td>
+            <td class="cell-locker-number"></td>
+            <td class="cell-box-number"></td>
+            <td class="cell-plant-number"></td>
+            <td class="cell-department"></td>
+            <td class="cell-location"></td>
+            <td class="cell-status"></td>
+            <td>
+                <input type="button" value="pokaż" class="button-view-employee btn btn-outline-danger" style="display: none">
+                <input type="button" value="załaduj" class="button-update-box btn btn-outline-danger" style="display: none">
+            </td>
+            <td>
+                <input type="button" value="przenieś" class="button-employee-export btn btn-outline-secondary" style="display: none">
+                <input type="button" value="importuj" class="button-employee-import btn btn-outline-secondary" style="display: none">
+            </td>
+            <td>
+                <input type="button" value="zwolnij" class="button-dismiss-employee btn btn-outline-dark" style="display: none">
+                <input type="button" value="dodaj" class="button-add-employee btn btn-outline-dark" style="display: none">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+<script src="js/view-boxes.js" defer></script>
+

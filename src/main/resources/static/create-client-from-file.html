@@ -1,0 +1,51 @@
+<div>
+    <style>
+        #drop-box {
+            margin-top: 3px;
+            width: 300px;
+            height: 300px;
+            border: 3px dashed darkgray;
+            border-radius: 10px;
+        }
+    </style>
+
+
+    <div class="row">
+        <div class="input-group col-sm-12">
+            <div class="input-group col-sm-9" style="padding-left: 0px">
+                <input class="form-control col-sm-4" type="text" id="input-client-name-ccff"
+                       placeholder="Nazwa klienta">
+                <input class="form-control col-sm-1" type="number" id="input-plant-number-ccff" placeholder="Numer">
+                <button id="button-create-client" type="button" class="btn btn-danger">Utwórz i wczytaj klienta</button>
+                <button id="button-add-articles" type="button" class="btn btn-secondary">Dodaj artykuły</button>
+            </div>
+            <div class="input-group col-sm-3" style="padding-left: 0px">
+                <select class="form-control" id="select-template-type">
+                    <option value="NOT_SELECTED">Rodzaj szablonu</option>
+                    <option value="TEMPLATE_WITH_LOCATIONS">Lokalizacje</option>
+                    <option value="TEMPLATE_WITH_LOCATIONS_AND_SIZES">Lokalizacje i rozmiary</option>
+                    <option value="TEMPLATE_WITH_BOXES">Boxy</option>
+                    <option value="TEMPLATE_WITH_BOXES_AND_SIZES">Boxy i rozmiary</option>
+                </select>
+                <button id="button-download-template-for-create-client" type="button" class="btn btn-secondary">
+                    Pobierz szablon
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <button id="button-display-drop-box" type="button" class="btn btn-danger">Wczytaj wypełniony szablon</button>
+    </div>
+</div>
+
+<div id="div-content-2" style="margin-top: 15px"></div>
+
+<div class="row">
+    <div id="div-drop-box" class="col-md-5" style="display: none">
+        <label for="drop-box" class="form-label" style="margin-top: 5px;">Upuść plik ZUSO poniżej:</label>
+        <div id="drop-box"></div>
+    </div>
+</div>
+
+<script src="js/create-client-from-file.js" defer></script>

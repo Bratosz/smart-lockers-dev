@@ -1,0 +1,107 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a id="button-view-lockers" class="nav-link active" aria-current="page" href="#">Szafy</a>
+                </li>
+                <li class="nav-item">
+                    <a id="button-view-boxes" class="nav-link" href="#">Boxy</a>
+                </li>
+                <li class="nav-item">
+                    <a id="button-measurement-list" class="nav-link" href="#">Pomiary</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       href="#" id="navbarDropdown"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-expanded="false">
+                        Dodaj
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a id="button-add-employee" class="dropdown-item" href="#">Pracownika</span></a>
+                        </li>
+                        <li>
+                            <a id="button-add-position" class="dropdown-item" href="#">Stanowisko</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a id="button-load-client-creation" class="dropdown-item" href="#">Klienta</a></li>
+                        <li><a id="link-to-load-client-from-file" class="dropdown-item" href="#">Klienta z
+                            ZUSO</span></a></li>
+                        <li><a id="link-to-add-lockers" class="dropdown-item" href="#">Szafy</a></li>
+                        <li><a id="button-edit-departments" class="dropdown-item" href="#">Nazwy oddziałów</a></li>
+                    </ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       href="#" id="navbarDropdownSecond"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-expanded="false">
+                        Inne
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownSecond">
+                        <li>
+                            <a id="button-manage-plant" class="dropdown-item" href="#">Wczytaj zakład</span></a>
+                        </li>
+                        <li>
+                            <a id="button-orders" class="dropdown-item" href="#">Zamówienia</span></a>
+                        </li>
+                        <li>
+                            <a id="button-manage-lockers" class="dropdown-item" href="#">Zarządzaj szafami</span></a>
+                        </li>
+                        <li>
+                            <a id="button-articles" class="dropdown-item" href="#">Artykuły</span></a>
+                        </li>
+                        <li>
+                            <a id="button-management-list" class="dropdown-item" href="#">Lista robocza</span></a>
+                        </li>
+                        <li>
+                            <a id="button-reports" class="dropdown-item" href="#">Raporty</span></a>
+                        </li>
+                        <li>
+                            <a id="button-qr-reader" class="dropdown-item" href="#">Czytnik</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link disabled">Disabled</a>-->
+                <!--                </li>-->
+            </ul>
+            <form class="d-flex justify-content-end">
+                <div id="nav-div-input-last-name">
+                    <input id="nav-input-last-name" class="form-control me-2" type="search"
+                           placeholder="Szukaj po nazwisku"
+                           aria-label="Search">
+                </div>
+                <button id="nav-button-search-by-last-name" class="btn btn-danger" type="button">Szukaj</button>
+                <button id="nav-button-search-by-last-name-and-open-in-new-card" class="btn btn-outline-danger disabled"
+                        type="button">NK
+                </button>
+
+                <input id="input-plant-number" class="form-control col-3" type="search" placeholder="Nr zakładu"
+                       aria-label="Search">
+                <button id="button-load-client-by-plant-number" class="btn btn-outline-secondary" type="button">
+                    Wczytaj
+                </button>
+
+            </form>
+            <form class="form-inline">
+                <button id="button-go-back" class="btn btn-secondary" type="button">&#8249;&#8249;&#8249;</button>
+            </form>
+        </div>
+    </div>
+</nav>
+

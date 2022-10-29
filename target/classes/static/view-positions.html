@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SL - Stanowiska</title>
+    <script src="js/libs/jquery-3.3.1.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/end-points.js"></script>
+    <script src="js/smart-lockers.js"></script>
+    <script src="js/table-manager.js"></script>
+    <script src="js/row-writer.js"></script>
+    <script src="js/add-position.js" defer></script>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/style-add-position.css" type="text/css"/>
+</head>
+<body>
+
+<div class="container">
+    <div>
+        <div class="display-inline width-250">
+            <img src="kls_logo.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="display-inline width-550"></div>
+        <div class="display-inline width-250 align-right">
+            <div id="client-name"></div>
+        </div>
+    </div>
+    <br>
+
+    <!--Nav bar-->
+    <div id="div-nav"></div>
+
+    <div class="gap-vertical-10"></div>
+    <div class="gap-vertical-10"></div>
+
+    <!--POSITIONS_AND_ARTICLES TABLE-->
+    <div id="left-block" class="display-inline">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Stanowisko</th>
+                <th>
+                </th>
+            </tr>
+            </thead>
+            <tbody id="table-of-positions">
+            <tr id="row-template-positions" style="display: none">
+                <td class="cell-position-name"></td>
+                <td class="cell-button">
+                    <input type="button" value="Edytuj" class="button-edit-position">
+                    <input type="button" value="Usuń" class="button-delete-position">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+    <br>
+</div>
+
+</body>

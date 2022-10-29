@@ -1,0 +1,60 @@
+<main>
+    <div class="row col-md-12" style="padding-left: 20px">
+        <div class="col-lg-4">
+            <form class="form-inline">
+                <div class="form-group">
+                    <select class="form-control" id="select-order-type">
+                        <option value="ALL">Wszystkie</option>
+                        <option value="CHANGE_SIZE">Zmiana rozmiaru</option>
+                        <option value="CHANGE_ARTICLE">Zmiana artykułu</option>
+                        <option value="EXCHANGE_FOR_NEW_ONE">Wymiana na nowe</option>
+                        <option value="NEW_ARTICLE">Nowy artykuł</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="gap-vertical-10"></div>
+
+    <div class="row col-md-12">
+        <div id="div-employees-with-active-orders" class="container-table col-md-12">
+            <table id="table-of-employees-with-active-orders" class="table-striped col-md-12">
+                <thead>
+                <tr>
+                    <th>Oddział</th>
+                    <th>Zakład</th>
+                    <th>Szafa</th>
+                    <th>Box</th>
+                    <th>Nazwisko</th>
+                    <th>Imię</th>
+                    <th>Aktywne zamówienia</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="row-template-for-employee-with-active-order" style="display: none;">
+                    <td class="cell-department"></td>
+                    <td class="cell-plant-number"></td>
+                    <td class="cell-locker-number"></td>
+                    <td class="cell-box-number"></td>
+                    <td class="cell-last-name"></td>
+                    <td class="cell-first-name"></td>
+                    <td class="cell-active-orders"></td>
+                    <td>
+                        <button class="button-view-employee btn btn-outline-secondary" type="button">Pokaż</button>
+                    </td>
+                    <td>
+                        <button class="button-roll-out btn btn-outline-secondary" type="button"
+                                style="font-size: 20px;">&or;
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<script src="js/orders-view.js" defer></script>

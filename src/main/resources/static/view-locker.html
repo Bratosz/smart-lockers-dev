@@ -1,0 +1,42 @@
+<main>
+        <div id="locker-info" class="header-element"></div>
+        <br>
+        <table id="table-of-boxes" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Box</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="row-template" style="display: none">
+                <td class="cell-first-name"></td>
+                <td class="cell-last-name"></td>
+                <td class="cell-box-number"></td>
+                <td class="cell-status"></td>
+                <td>
+                    <input type="button" value="pokaż" class="button-view-employee btn btn-outline-danger" style="display: none">
+                    <input type="button" value="załaduj" class="button-update-box btn btn-outline-danger" style="display: none">
+                </td>
+                <td>
+                    <input type="button" value="przenieś" class="button-employee-export btn btn-outline-secondary" style="display: none">
+                    <input type="button" value="importuj" class="button-employee-import btn btn-outline-secondary" style="display: none">
+                </td>
+                <td>
+                    <input type="button" value="zwolnij" class="button-dismiss-employee btn btn-outline-dark" style="display: none">
+                    <input type="button" value="dodaj" class="button-add-employee btn btn-outline-dark" style="display: none">
+                </td>
+                <td><button type="button"
+                            class="button-delete-box confirm-link btn btn-outline-secondary">Usuń</button></td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="dialog" title="Wymagane potwierdzenie"></div>
+    </main>
+<script src="js/view-locker.js" defer></script>

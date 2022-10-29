@@ -1,0 +1,103 @@
+<main>
+    <!--Form-->
+    <!--Input lastname-->
+    <div class="headerRow">
+        <div class="col-lg-4">
+            <form class="form-inline">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Nazwisko"
+                               id="input-last-name">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary"
+                                    type="button" id="button-search-by-last-name">Szukaj
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--Input locker number-->
+    <div class="headerRow">
+        <div class="col-lg-4">
+            <form class="form-inline">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <input type="text" id="input-locker-number" class="form-control"
+                               placeholder="Numer szafki">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button"
+                                    id="button-get-boxes-by-locker-number">Szukaj
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--Filtering-->
+    <div class="headerRow">
+        <div class="col-lg-4">
+            <form class="form-inline">
+                <div class="form-group">
+                    <select class="form-control" id="select-plant"></select>
+                    <select class="form-control" id="select-department"></select>
+                    <select class="form-control" id="select-location"></select>
+                    <select class="form-control" id="select-box-status">
+                        <option value="ALL">Status szafki</option>
+                        <option value="OCCUPY">Zajęta</option>
+                        <option value="FREE">Wolna</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" id="button-filter">Filtruj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br>
+    <table class="table col-10 table-striped" id="table-of-boxes">
+        <thead>
+        <tr>
+            <th>Nazwisko</th>
+            <th>Imię</th>
+            <th>Szafa</th>
+            <th>Box</th>
+            <th>Numer zakładu</th>
+            <th>Oddział</th>
+            <th>Lokalizacja</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr id="row-template" style="display: none">
+            <td class="cell-last-name"></td>
+            <td class="cell-first-name"></td>
+            <td class="cell-locker-number"></td>
+            <td class="cell-box-number"></td>
+            <td class="cell-plant-number"></td>
+            <td class="cell-department"></td>
+            <td class="cell-location"></td>
+            <td class="cell-status"></td>
+            <td>
+                <input type="button" value="pokaż" class="button-view-employee" style="display: none">
+                <input type="button" value="załaduj" class="button-update-box" style="display: none">
+            </td>
+            <td>
+                <input type="button" value="przenieś" class="button-employee-export" style="display: none">
+                <input type="button" value="importuj" class="button-employee-import" style="display: none">
+            </td>
+            <td>
+                <input type="button" value="zwolnij" class="button-dismiss-employee" style="display: none">
+                <input type="button" value="dodaj" class="button-add-employee" style="display: none">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</main>
+<script src="js/view-boxes-load.js"></script>
+

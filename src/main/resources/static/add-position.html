@@ -1,0 +1,92 @@
+<main>
+    <div class="row">
+        <div class="input-group col-sm-3">
+            <select id="select-position" class="form-control">
+                <option value="">Wybierz stanowisko</option>
+            </select>
+            <button type="button" id="button-load-position" class="btn btn-danger">Załaduj</button>
+            <button type="button" id="button-position-delete" class="btn btn-secondary">Usuń</button>
+        </div>
+        <div class="input-group col-sm-3">
+            <input id="input-position-name" class="form-control"
+                   type="text" placeholder="Nowe stanowisko">
+            <input type="button" id="button-create-position" class="btn btn-danger" value="Utwórz">
+            <input type="button" id="button-change-name" class="btn btn-secondary" value="Zmień nazwę"
+                   style="display: none">
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="input-group">
+                <select id="select-department" class="form-control">
+                    <option value="">Wybierz oddział</option>
+                </select>
+                <button id="button-add-department" class="btn btn-outline-danger" type="button">Dodaj</button>
+            </div>
+            <div class="input-group">
+                <select id="select-trousers" class="form-control">
+                    <option value="">Spodnie</option>
+                </select>
+                <input id="input-quantity-trousers" class="form-control col-sm-2" type="number"
+                       placeholder="Ile?">
+                <button id="button-add-trousers-with-quantity" class="btn btn-outline-danger"
+                        type="button">Dodaj
+                </button>
+            </div>
+            <div class="input-group">
+                <select id="select-shirt" class="form-control">
+                    <option value="">Koszulka</option>
+                </select>
+                <input id="input-quantity-shirt" class="form-control col-sm-2" type="number"
+                       placeholder="Ile?">
+                <button id="button-add-shirt-with-quantity" class="btn btn-outline-danger" type="button">Dodaj</button>
+            </div>
+            <div class="input-group">
+                <select id="select-sweatshirt" class="form-control">
+                    <option value="">Bluza</option>
+                </select>
+                <input id="input-quantity-sweatshirt" class="form-control col-sm-2" type="number"
+                       placeholder="Ile?">
+                <button id="button-add-sweatshirt-with-quantity" class="btn btn-outline-danger" type="button">Dodaj</button>
+            </div>
+            <div class="input-group">
+                <select id="select-other-article" class="form-control">
+                    <option value="">Inne</option>
+                </select>
+                <input id="input-quantity-other-article" class="form-control col-sm-2"
+                       type="number" placeholder="Ile?">
+                <button id="button-add-other-article-with-quantity" class="btn btn-outline-danger"
+                        type="button">Dodaj
+                </button>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <table id="table-of-position">
+                <tbody class="table table-striped">
+                <tr id="row-template" style="display: none">
+                    <td class="cell-label"></td>
+                    <td class="cell-content"></td>
+                    <td class="cell-select" style="display: none">
+                        <select class="select-alternate-article form-control">
+                            <option>Alternatywny artykuł</option>
+                        </select>
+                    </td>
+                    <td class="cell-button" style="display: none">
+                        <button type="button" class="btn btn-outline-danger button-add-alternate-article">Dodaj</button>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<script src="js/add-position.js" defer></script>
+
+

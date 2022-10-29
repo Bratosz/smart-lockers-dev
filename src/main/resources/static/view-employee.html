@@ -1,0 +1,411 @@
+<main>
+    <div class="row">
+        <div class="col-sm-8">
+<!--EMPLOYEE PANEL-->
+            <div class="gap-vertical-20"></div>
+            <div class="row">
+                <div id="employee" class="col-sm-6" style="font-size: 30px;"></div>
+                <div class="col-lg-6">
+<!--POSITION AND DEPARTMENT SELECTION-->
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <select class="form-control" id="select-department"></select>
+                            <select class="form-control" id="select-position"></select>
+                            <button type="button" class="btn btn-secondary" id="button-edit-department-and-position">
+                                Zmień
+                            </button>
+                            <button type="button" id="refresh-employee-button" class="btn btn-danger">Odśwież</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="gap-vertical-20"></div>
+
+<!--ORDERS TABLE-->
+            <div class="container-table col-sm-12" id="div-orders" style="display: none">
+                <span>Zamówienia</span>
+                <table id="table-of-main-orders" class="table-striped">
+                    <thead>
+                    <th>Id</th>
+                    <th>Rodzaj zamówienia</th>
+                    <th>Status zamówienia</th>
+                    <th>Ilość sztuk</th>
+                    <th>Zmiana statusu
+                    <th>Nowe ubranie</th>
+                    <th>Rozmiar</th>
+                    <th>Dł.</th>
+                    <th></th>
+                    </thead>
+                    <tbody id="table-of-main-orders-body">
+                    <tr id="row-template-main-order" style="display: none">
+                        <td class="cell-main-order-id"></td>
+                        <td class="cell-main-order-type"></td>
+                        <td class="cell-main-order-status"></td>
+                        <td class="cell-clothes-amount"></td>
+                        <td class="cell-status-changed-date"></td>
+                        <td class="cell-desired-article">
+                            <select class="form-control select-article-in-orders-table"
+                                    style="display: none; font-size: 10px;"></select>
+                        </td>
+                        <td class="cell-desired-size">
+                            <input type="text" class="input-size input-field-medium-small">
+                        </td>
+                        <td class="cell-length-modification">
+                            <input type="text" class="input-length-modification input-field-medium-small">
+                        </td>
+                        <td><input type="checkbox" class="check-box-main-order"/></td>
+                    </tr>
+                    </tbody>
+                </table>
+<!--ORDERS MANAGING-->
+                <div>
+                    <div class="side-menu">
+                        <input type="radio" id="manage-order-1" name="manage-order" value="EDIT">
+                        <label for="manage-order-1">Edytuj</label>
+                        <input type="radio" id="manage-order-2" name="manage-order" value="CANCEL">
+                        <label for="manage-order-2">Usuń</label>
+                        <button id="button-perform-action-on-main-orders">Zatwierdź</button>
+                    </div>
+                    <div class="gap-vertical-20"></div>
+                </div>
+            </div>
+
+<!--EMPLOYEE ACTIVE CLOTHES-->
+            <div class="container-table" id="div-clothes-active" style="display:none">
+                <div class="row col-sm-12">
+                    <div class="gap-vertical-5"></div>
+                    <span>Ubrania aktywne</span>
+                    <table id="table-of-clothes" class="table-striped">
+                        <thead>
+                        <th>Lp</th>
+                        <th>Artykuł</th>
+                        <th>Nazwa artykułu</th>
+                        <th>Rozmiar</th>
+                        <th>Data przypisania</th>
+                        <th>Kod kreskowy</th>
+                        <th>Data wydania</th>
+                        <th>W praniu</th>
+                        <th>\\</th>
+                        </thead>
+                        <tbody id="table-of-clothes-body">
+                        <tr style="display: none">
+                            <td class="cell-ordinal-number"></td>
+                            <td class="cell-article-number"></td>
+                            <td class="cell-article-name"></td>
+                            <td class="cell-size"></td>
+                            <td class="cell-assignment-date"></td>
+                            <td class="cell-barcode"></td>
+                            <td class="cell-release-date"></td>
+                            <td class="cell-washing-date"></td>
+                            <td><input type="checkbox" class="cloth-check-box my-check-box"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <form class="form-inline">
+                    <button id="button-exchange-clothes-for-new-ones" type="button" class="btn btn-outline-danger" style="margin-right: 7px;"
+                    data-toggle="modal" data-target="#modal-exchange-description">
+                        Wymiana na nowe
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal-exchange-description" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Opis wymiany</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <input id="input-exchange-description" type="text" class="form-control" style="width: 460px">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+                                    <button id="button-confirm-exchange-clothes-for-new-ones" type="button" data-dismiss="modal" class="btn btn-danger">Zatwierdź</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="button-add-length-modification-order" class="btn btn-outline-danger" type="button">Modyfikacja</button>
+                    <input id="input-length-modification-for-modification-only" class="form-control" type="text" placeholder="N100/R100" style="margin-right: 7px;">
+                    <button id="button-add-repair-order" class="btn btn-outline-danger" type="button">Naprawa</button>
+                    <input id="input-repair-description" class="form-control" type="text" placeholder="Opis...">
+                </form>
+            </div>
+
+            <div class="row">
+                <div class="gap-vertical-5"></div>
+                <div class="radio-list">
+                    <input value="RELEASE_ROTATIONAL_CLOTH" type="radio" id="assignment-1" name="assignment"  checked>
+                    <label for="assignment-1">Wydanie rotacji</label>
+                    <input value="ACCEPT_CLOTH" type="radio" id="assignment-2" name="assignment">
+                    <label for="assignment-1">Przyjęcie odzieży</label>
+                </div>
+                <div class="gap-vertical-20"></div>
+                <span>Przyjęcie odzieży: </span>
+                <input id="input-barcode-cloth-assignment" class="input-field-medium align-right" type="number"/>
+            </div>
+
+
+<!--EMPLOYEE TO RELEASE CLOTHES-->
+            <div class="container-table col-sm-12" id="div-clothes-to-release" style="display: none">
+                <div class="gap-vertical-20"></div>
+                    <span>Ubrania do wydania</span>
+                <div class="gap-vertical-5"></div>
+                <table id="table-of-clothes-to-release" class="table-striped">
+                        <thead>
+                        <th>Lp</th>
+                        <th>Artykuł</th>
+                        <th>Nazwa artykułu</th>
+                        <th>Rozmiar</th>
+                        <th>Data przypisania</th>
+                        <th>Kod kreskowy</th>
+                        <th>\\</th>
+                        </thead>
+                        <tbody id="table-of-clothes-to-release-body">
+                        <tr style="display: none">
+                            <td class="cell-ordinal-number"></td>
+                            <td class="cell-article-number"></td>
+                            <td class="cell-article-name"></td>
+                            <td class="cell-size"></td>
+                            <td class="cell-assignment-date"></td>
+                            <td class="cell-barcode"></td>
+                            <td><input type="checkbox" class="cloth-check-box"/></td>
+                        </tr>
+                        </tbody>
+                    </table>
+            </div>
+
+
+<!--ACCEPTED CLOTHES TABLE-->
+            <div class="container-table col-sm-12" id="div-accepted-clothes">
+                <div class="gap-vertical-20"></div>
+                <span>Ubrania przyjęte na wymianę</span>
+                <div class="gap-vertical-5"></div>
+                <table id="table-of-accepted-clothes">
+                    <thead>
+                    <th>Lp</th>
+                    <th>Artykuł</th>
+                    <th>Nazwa artykułu</th>
+                    <th>Rozmiar</th>
+                    <th>Data przypisania</th>
+                    <th>Kod kreskowy</th>
+                    <th>Data wydania</th>
+                    <th>W praniu</th>
+                    <th>\\</th>
+                    </thead>
+                    <tbody id="table-of-accepted-clothes-body">
+                    <tr id="row-template-accepted-clothes" style="display: none">
+                        <td class="cell-ordinal-number"></td>
+                        <td class="cell-clientArticle-number"></td>
+                        <td class="cell-clientArticle-name"></td>
+                        <td class="cell-size"></td>
+                        <td class="cell-assignment-date"></td>
+                        <td class="cell-barcode"></td>
+                        <td class="cell-release-date"></td>
+                        <td class="cell-washing-date"></td>
+                        <td><input type="checkbox" class="clothToRelease-check-box"/></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+<!--ROTATIONAL CLOTHES TABLE-->
+            <div class="container-table col-sm-12" id="div-rotational-clothes" style="display:none">
+                <div class="gap-vertical-20"></div>
+                <span>Wydana rotacja</span>
+                    <div class="gap-vertical-5"></div>
+                    <table id="table-of-rotational-clothes" class="table-striped">
+                        <thead>
+                        <th>Lp</th>
+                        <th>Artykuł</th>
+                        <th>Nazwa artykułu</th>
+                        <th>Rozmiar</th>
+                        <th>Data przypisania</th>
+                        <th>Kod kreskowy</th>
+                        <th>Data wydania</th>
+                        <th>W praniu</th>
+                        <th>\\</th>
+                        </thead>
+                        <tbody id="table-of-rotational-clothes-body">
+                        <tr id="row-template-rotational-clothes" style="display: none">
+                            <td class="cell-ordinal-number"></td>
+                            <td class="cell-article-number"></td>
+                            <td class="cell-article-name"></td>
+                            <td class="cell-size"></td>
+                            <td class="cell-assignment-date"></td>
+                            <td class="cell-barcode"></td>
+                            <td class="cell-released-to-employee-date"></td>
+                            <td class="cell-washing-date"></td>
+                            <td><input type="checkbox" class="cloth-check-box"/></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                <button type="button" class="btn btn-outline-danger" id="button-return-rotational-clothes">Zwróć</button>
+            </div>
+            <br>
+<!--WITHDRAWN CLOTHES TABLE-->
+            <div class="container-table col-sm-12" id="div-withdrawn-clothes">
+                <span>Wycofana odzież</span>
+                <div class="gap-vertical-5"></div>
+                <table id="table-of-withdrawn-clothes">
+                    <thead>
+                    <th>Lp</th>
+                    <th>Artykuł</th>
+                    <th>Nazwa artykułu</th>
+                    <th>Rozmiar</th>
+                    <th>Data przypisania</th>
+                    <th>Kod kreskowy</th>
+                    <th>Data wydania</th>
+                    <th>W praniu</th>
+                    <th>\\</th>
+                    </thead>
+                    <tbody id="table-of-withdrawn-clothes-body">
+                    <tr id="row-template-withdrawn-clothes" style="display: none">
+                        <td class="cell-ordinal-number"></td>
+                        <td class="cell-article-number"></td>
+                        <td class="cell-article-name"></td>
+                        <td class="cell-size"></td>
+                        <td class="cell-assignment-date"></td>
+                        <td class="cell-barcode"></td>
+                        <td class="cell-release-date"></td>
+                        <td class="cell-washing-date"></td>
+                        <td><input type="checkbox" class="clothToRelease-check-box"/></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="gap-vertical-20"></div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-4">
+<!--EXCHANGE CLOTHES-->
+            <div class="row" id="div-exchange-clothes-panel" style="display: none">
+                <p>Wybierz artykuł do wymiany</p>
+                <form class="form-inline">
+                    <div class="form-group col-sm-12">
+                        <select id="select-article-to-change-for-order-clothes" class="form-control col-sm-12"></select>
+                        <button type="button" id="button-change-size" class="btn btn-outline-danger col-sm-6">Zmiana
+                            rozmiaru
+                        </button>
+                        <button type="button" id="button-change-article" class="btn btn-outline-danger col-sm-6">Zmiana
+                            artykułu
+                        </button>
+                    </div>
+                    <div class="form-group col-sm-12" id="div-order-clothes" style="display: none">
+                        <select class="form-control col-sm-12" id="select-desired-article-for-order-clothes"
+                                style="display: none"></select>
+                        <input type="text" class="form-control col-sm-3 center" id="input-size-for-order-clothes"
+                               placeholder="Rozmiar">
+                        <input type="text" class="form-control col-sm-3 center"
+                               id="input-length-modification-for-order-clothes"
+                               placeholder="N100/R100">
+                        <button type="button" class="btn btn-secondary col-sm-6"
+                                id="button-add-order-for-order-clothes">Zamów
+                        </button>
+                    </div>
+                </form>
+                <br>
+            </div>
+<!--ADD ARTICLES-->
+            <div class="row" id="order-new-clothes-panel" style="display: none">
+                <p>Dodaj nowy artykuł</p>
+                <form class="form-inline">
+                    <div class="form-group col-sm-12">
+                        <select id="select-article-to-add" class="form-control col-sm-12"></select>
+                        <input type="text" class="form-control col-sm-4 center"
+                               id="input-size-for-add-article" placeholder="Rozmiar">
+                        <input type="text" class="form-control col-sm-4 center"
+                               id="input-length-modification-for-add-article" placeholder="N100/R100">
+                        <input type="number" class="form-control col-sm-4 center"
+                               id="input-quantity-for-add-article">
+                        <button type="button" id="button-add-new-article" class="btn btn-outline-danger col-sm-12">
+                            Dodaj
+                        </button>
+                    </div>
+<!--                    <div class="form-group col-sm-12" id="div-order-clothes" style="display: none">-->
+<!--                        <select class="form-control col-sm-12" id="select-desired-article-for-order-clothes"-->
+<!--                                style="display: none"></select>-->
+<!--                        <input type="text" class="form-control col-sm-3 center" id="input-size-for-order-clothes"-->
+<!--                               placeholder="Rozmiar">-->
+<!--                        <input type="text" class="form-control col-sm-3 center"-->
+<!--                               id="input-length-modification-for-order-clothes"-->
+<!--                               placeholder="N100/R100">-->
+<!--                        <button type="button" class="btn btn-secondary col-sm-6"-->
+<!--                                id="button-add-order-for-order-clothes">Zamów-->
+<!--                        </button>-->
+<!--                    </div>-->
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<!--Clothing acceptance-->
+<!--        <div class="acceptance-parametersForArticle">-->
+<!--            <div class="gap-vertical-5"></div>-->
+<!--            <div class="radio-list">-->
+<!--                <input type="radio" id="assginment-2" name="assignment"-->
+<!--                       value="ASSIGN_WITHDRAWN_CLOTH">-->
+<!--                <label for="assignment">Zapisanie wycofanej(nadmiarowej) odzieży</label>-->
+<!--            </div>-->
+<!--            <div class="gap-vertical-5"></div>-->
+<!--            <div>-->
+<!--                <span>Jak zwrócono: </span>-->
+<!--                <select id="withdraw-type">-->
+<!--                    <option value="IN-THE-BAG">Oddana w worku</option>-->
+<!--                    <option value="RETURNED_TO_SERVICE_MAN">Oddana serwisantowi</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--            <div class="gap-vertical-5"></div>-->
+<!--            <div class="display-inline">-->
+<!--                <span>Data wydania: </span>-->
+<!--                <select id="select-month">-->
+<!--                    <option value="01">01</option>-->
+<!--                    <option value="02">02</option>-->
+<!--                    <option value="03">03</option>-->
+<!--                    <option value="04">04</option>-->
+<!--                    <option value="05">05</option>-->
+<!--                    <option value="06">06</option>-->
+<!--                    <option value="07">07</option>-->
+<!--                    <option value="08">08</option>-->
+<!--                    <option value="09">09</option>-->
+<!--                    <option value="10">10</option>-->
+<!--                    <option value="11">11</option>-->
+<!--                    <option value="12">12</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--            <div class="display-inline">-->
+<!--                <select id="select-year">-->
+<!--                    <option value="2021">2021</option>-->
+<!--                    <option value="2020">2020</option>-->
+<!--                    <option value="2019">2019</option>-->
+<!--                    <option value="2018">2018</option>-->
+<!--                    <option value="2017">2017</option>-->
+<!--                    <option value="2016">2016</option>-->
+<!--                    <option value="2015">2015</option>-->
+<!--                    <option value="2014">2014</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--            <div class="gap-vertical-5"></div>-->
+<!--            <div>-->
+<!--                <span>Egzemplarz nr:</span>-->
+<!--                <input id="input-ordinal-number" class="input-field-small" type="number">-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+    <div class="gap-vertical-20"></div>
+    <div class="gap-vertical-20"></div>
+    <div class="gap-vertical-20"></div>
+
+</main>
+<script src="js/view-employee.js" defer></script>

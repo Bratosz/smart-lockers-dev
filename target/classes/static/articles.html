@@ -1,0 +1,111 @@
+<main>
+    <div>
+        <div class="row">
+            <div class="col-sm-12" style="padding-left: 0px">
+                    <div class="input-group" style="padding-left: 0px">
+                        <div class="input-group col-sm-5">
+                            <select class="form-control" id="select-article">
+                                <option value="0">Nie wczytano artykułów</option>
+                            </select>
+                            <select class="form-control col-sm-2" id="select-badge-number">
+                                <option value="0">Emblemat</option>
+                                <option value="0">0</option>
+                                <option value="500">500</option>
+                            </select>
+                            <button class="btn btn-danger" type="button"
+                                    id="button-add-client-article">Dodaj
+                            </button>
+                        </div>
+                        <div class="input-group col-sm-7">
+                            <input type="number" id="input-article-number" class="form-control col-sm-1"
+                                   placeholder="Nr art.">
+                            <input type="text" id="input-article-name" class="form-control col-sm-5" placeholder="Nazwa artykułu">
+                            <select class="form-control col-sm-2" id="select-badge-number-for-new-client-article">
+                                <option value="0">Emblemat</option>
+                                <option value="0">0</option>
+                                <option value="500">500</option>
+                            </select>
+                            <button type="button" class="btn btn-secondary"
+                                    id="button-create-article-and-add-client-article">Utwórz i dodaj
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="gap-vertical-20"></div>
+        <div id="div-articles-parameters">
+            <div class="display-inline">
+                <div class="display-inline">
+                    <span>Okres amortyzacji (w miesiącach) </span>
+                </div>
+                <div class="display-inline">
+                    <select class="select-std" id="select-depreciation-period">
+                        <option value="42">42</option>
+                        <option value="36">36</option>
+                        <option value="24">24</option>
+                        <option value="12">12</option>
+                    </select>
+                    <input id="button-set-depreciation-period" type="button" value="Ustaw">
+                </div>
+            </div>
+            <div class="display-inline width-100"></div>
+            <div class="display-inline">
+                <div class="display-inline">
+                    <span>Amortyzacja do </span>
+                </div>
+                <div class="display-inline">
+                    <div class="display-inline">
+                        <input type="radio" id="percentage-cap-1" name="percentage-cap"
+                               value="100" checked>
+                        <label for="percentage-cap-1">100%</label>
+                    </div>
+                    <div class="display-inline">
+                        <input type="radio" id="percentage-cap-2" name="percentage-cap"
+                               value="50">
+                        <label for="percentage-cap-2">50%</label>
+                    </div>
+                    <input id="button-set-depreciation-cap" type="button" value="Ustaw">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gap-vertical-5"></div>
+    <div>
+        <table id="table-of-articles" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numer art.</th>
+                <th>Nazwa art.</th>
+                <th>Rodzaj odzieży</th>
+                <th>Emblemat</th>
+                <th>Okres Amortyzacji</th>
+                <th>Amortyzacja</th>
+                <th>Cena wykupu</th>
+                <th>Nowa cena</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="row-template" style="display: none">
+                <td class="cell-id"></td>
+                <td class="cell-article-number"></td>
+                <td class="cell-article-name"></td>
+                <td class="cell-cloth-type"></td>
+                <td class="cell-badge-number">
+                    <select id="select-badge"></select>
+                </td>
+                <td class="cell-depreciation-period"></td>
+                <td class="cell-depreciation-cap"></td>
+                <td class="cell-article-redemption-price"></td>
+                <td><input class="input-new-redemption-price"
+                           type="number"></td>
+                <td><input type="button" value="zapisz"
+                           class="button-save"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<script src="js/articles.js" defer></script>

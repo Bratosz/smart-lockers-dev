@@ -1,0 +1,29 @@
+#left-block {
+     vertical-align: top;
+ }
+
+#right-block {
+    vertical-align: top;
+    margin-left: 50px;
+}
+
+.cell-plant-locations {
+    max-width: 300px;
+}
+
+.div-form-row {
+    padding: 1px;
+}
+
+.div-input {
+    width: 380px;
+}
+
+.select-medium {
+    width: 175px;
+}
+
+p {
+    margin-bottom: 1px;
+    font-size: 12px;
+}

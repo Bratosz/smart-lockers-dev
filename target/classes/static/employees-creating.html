@@ -1,0 +1,52 @@
+<main>
+    <div class="row">
+        <div class="col-lg-4">
+            <form class="form-inline">
+                <div class="form-group">
+                    <select class="form-control" id="select-department"></select>
+                    <select class="form-control" id="select-position"></select>
+                    <select class="form-control" id="select-location"></select>
+                    <button type="button" class="btn btn-secondary" id="button-set-dep-pos-loc">Zmień</button>
+                    <button type="button" class="btn btn-secondary" id="button-delete-employees-to-create">Usuń</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="gap-vertical-5"></div>
+    <div class="gap-vertical-5"></div>
+
+    <div class="row col-md-12">
+        <div class="container-table col-md-12">
+            <table id="table-of-employees-to-create" class="table-striped col-md-12">
+                <thead>
+                <tr>
+                    <th>Nazwisko</th>
+                    <th>Imię</th>
+                    <th>Oddział</th>
+                    <th>Stanowisko</th>
+                    <th>Lokalizacja szatni</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="row-template-employee-to-create" class="emp-to-create" style="display: none">
+                    <td class="cell-last-name"></td>
+                    <td class="cell-first-name"></td>
+                    <td><select class="form-control select-department"></select></td>
+                    <td><select class="form-control select-position"></select></td>
+                    <td><select class="form-control select-location"></select></td>
+                    <td><input type="checkbox" class="checkbox-employee-to-create my-check-box"></td>
+                    <td><button class="button-swap-names btn btn-outline-secondary" type="button" style="font-size: 15px; padding: 3px 6px 3px 6px">&#8644;</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <button id="button-post-employees-to-create" class="btn btn-danger col-md-2" type="button">Dodaj</button>
+        <button id="button-select-all-rows" class="btn btn-secondary" type="button">Zaznacz</button>
+        <button id="button-unselect-all-rows" class="btn btn-secondary" type="button">Odznacz</button>
+    </div>
+</main>
+
+<script src="js/employees-creating.js" defer></script>

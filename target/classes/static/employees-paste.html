@@ -1,0 +1,30 @@
+<main>
+    <div class="row col-md-12">
+        <div class="container-table col-md-12">
+            <table id="table-for-employees-paste-edpl" class="table-striped col-md-12">
+                <thead>
+                <tr>
+                    <th>Pracownik</th>
+                    <th>Oddział</th>
+                    <th>Stanowisko</th>
+                    <th>Lokalizacja szatni</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="row-template-employee-paste" class="edpl" style="display: none">
+                    <td><input type="text" class="form-control input-employee-name"></td>
+                    <td><input type="text" class="form-control input-department"></td>
+                    <td><input type="text" class="form-control input-position"></td>
+                    <td><input type="text" class="form-control input-location"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-10">
+            <button id="button-add-10-rows" class="btn btn-secondary" type="button">+10</button>
+        </div>
+        <button id="button-add-employees-edpl" class="btn btn-danger col-md-2" type="button">Dodaj</button>
+    </div>
+</main>
+
+<script src="js/employees-pasting.js" defer></script>

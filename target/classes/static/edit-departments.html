@@ -1,0 +1,35 @@
+<main>
+    <div class="row">
+        <div class="col-sm-4">
+            <select class="form-control col-lg-3" id="select-department"></select>
+            <input type="text" class="form-control col-lg-3" id="input-department-alias">
+            <button id="button-add-alias" class="btn btn-secondary">Dodaj alias</button>
+        </div>
+        <div class="col-sm-6">
+        <!--DEPARTMENTS WITH ALIASES-->
+            <div>
+                <table id="table-of-departments-with-aliases" class="table-striped" style="display: none">
+                    <thead>
+                    <th>Nazwa</th>
+                    <th>Aliasy</th>
+                    </thead>
+                    <tbody id="table-of-departments-with-aliases-body" class="table table-striped">
+                    <tr id="row-template" style="display: none">
+                        <td class="cell-department-name"></td>
+                        <td class="cell-department-aliases">
+                            <ul class="list">
+                                <li id="li-template" class="list-element" style="display: none"></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div id="department-name"></div>
+            <div id="department-number"></div>
+            <div id="department-aliases"></div>
+        </div>
+    </div>
+</main>
+<script src="js/edit-departments.js" defer></script>

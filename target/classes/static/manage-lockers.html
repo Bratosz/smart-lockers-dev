@@ -1,0 +1,84 @@
+<main>
+    <div class="gap-vertical-5"></div>
+    <div>
+        <!--FILTRATION-->
+        <div>
+            <div class="display-inline">
+                <select class="form-control" id
+                        ="select-plant"></select>
+            </div>
+            <div class="display-inline">
+                <select class="form-control" id
+                        ="select-department"></select>
+            </div>
+            <div class="display-inline">
+                <select class="form-control" id
+                        ="select-location"></select>
+            </div>
+            <div class="display-inline">
+                <input id
+                               ="button-filter" type="button" value="Filtruj">
+            </div>
+        </div>
+        <!--MODIFYING-->
+        <div class="gap-vertical-5"></div>
+        <div class="gap-vertical-5"></div>
+        <div>
+            <div class="display-inline">
+                <span>Od</span>
+                <input id
+                               ="input-starting-locker-number" type="number" class="input-small">
+            </div>
+            <div class="display-inline">
+                <span>do</span>
+                <input id
+                               ="input-end-locker-number" type="number" class="input-small">
+            </div>
+            <div class="display-inline">
+                <select class="form-control" id
+                        ="select-department-for-change"></select>
+            </div>
+            <div class="display-inline">
+                <select class="form-control" id
+                        ="select-location-for-change"></select>
+            </div>
+            <div class="display-inline">
+                <input id
+                               ="button-change-department-and-location"
+                       type="button" value="Zamień na wybrane">
+            </div>
+        </div>
+    </div>
+    <div class="gap-vertical-5"></div>
+    <div>
+        <table id
+                       ="table-of-lockers" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Numer</th>
+                <th>Pojemność</th>
+                <th>Numer zakładu</th>
+                <th>Oddział</th>
+                <th>Lokalizacja</th>
+                <th>Id</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id
+                        ="row-template" style="display: none">
+                <td class="cell-locker-number"></td>
+                <td class="cell-capacity"></td>
+                <td class="cell-plant-number"></td>
+                <td class="cell-department"></td>
+                <td class="cell-location"></td>
+                <td class="cell-id
+"></td>
+                <td><input type="button" value="Usuń"
+                           class="button-delete-locker"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<script src="js/manage-lockers.js" defer></script>

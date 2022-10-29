@@ -1,0 +1,38 @@
+<style>
+    p {
+        margin-bottom: 1px;
+        font-size: 12px;
+    }
+</style>
+    <main>
+        <div id="div-for-content">
+            <div class="display-inline">
+                <p>Wybierz </p>
+            </div>
+            <div class="display-inline">
+                <select id="select-plant">
+                </select>
+            </div>
+            <div class="display-inline">
+                <input id="button-load-plant-without-clothes"
+                       type="button" value="Wczytaj(bez ubrań)">
+            </div>
+            <div class="display-inline">
+                <input id="button-load-all-clothes"
+                       type="button" value="Wczytaj wszystkie ubrania">
+            </div>
+            <div class="display-inline">
+                <input id="button-update-clothes" type="button" value="Zaktualizuj ubrania">
+            </div>
+            <div class="display-inline">
+                <input id="button-generate-lear" type="button" value="Wczytaj gotowego">
+            </div>
+        </div>
+    </main>
+
+    <div id="div-fade" style="display: none">
+        <div style="margin-right: auto; margin-left: auto; width:400px;">
+            <h1>Proszę czekać...</h1>
+        </div>
+    </div>
+<script src="js/manage-plant.js" defer></script>

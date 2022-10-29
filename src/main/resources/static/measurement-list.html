@@ -1,0 +1,158 @@
+<main>
+    <br>
+    <div class="row">
+        <div class="header-row col-sm-8">
+            <button id="button-go-to-add-employee" class="btn btn-danger" type="button">Dodaj pracownika</button>
+            <button id="button-download-measurement-list" class="btn btn-secondary" type="button">Pobierz listę
+                pomiarową
+            </button>
+            <button id="button-go-to-employees-pasting" class="btn btn-secondary" type="button">Wklej pracowników</button>
+            <button id="button-go-to-employees-pasted" class="btn btn-secondary" type="button">Pokaż wklejonych</button>
+        </div>
+    </div>
+<br>
+    <div class="row">
+        <span>Pracownicy do pomiaru</span>
+    </div>
+    <div id="div-employees-to-measure" class="row" style="display: none">
+        <table id="table-of-employees-to-measure" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Nazwisko i Imię</th>
+                <th>Stanowisko</th>
+                <th>Zakład</th>
+                <th>Oddział</th>
+                <th>Lokalizacja</th>
+                <th>Szafka</th>
+                <th>Utworzony</th>
+                <th>Ubrania</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="row-template" style="display: none">
+                <td class="cell-employee-id" style="display: none"></td>
+                <td class="cell-full-name"></td>
+                <td class="cell-position"></td>
+                <td class="cell-plant-number"></td>
+                <td class="cell-department"></td>
+                <td class="cell-location"></td>
+                <td class="cell-locker-number-and-box-number"></td>
+                <td class="cell-creation-date"></td>
+                <td class="td-button">
+                    <input type="button" value="Dodaj"
+                           class="button-add-clothes btn btn-outline-danger" style="display: none">
+                    <input type="button" value="Dodaj"
+                           class="button-add-clothes btn btn-danger" style="display: none">
+                </td>
+                <td class="td-button"><input type="button" value="Przenieś"
+                                             class="button-relocate-employee btn btn-outline-dark"></td>
+                <td class="td-button"><input type="button" value="Zwolnij"
+                                             class="button-dismiss-employee btn btn-outline-dark"></td>
+                <td class="td-button"><input type="button" value="Usuń"
+                                             class="button-delete-from-list btn btn-outline-secondary"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="div-employees-to-assign" style="display: none">
+        <div class="row">
+            <div class="header-row col-sm-5">
+                <button id="button-download-report-of-measured-employees" class="btn btn-danger" type="button">Pobierz
+                    raport
+                </button>
+                <button id="button-set-measured-employees-as-assigned" class="btn btn-secondary" type="button">Oznacz
+                    jako przypisanych
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <span>Pracownicy pomierzeni (do przypisania)</span>
+        </div>
+        <div class="row">
+            <table id="table-of-employees-to-assign" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Nazwisko i Imię</th>
+                    <th>Stanowisko</th>
+                    <th>Zakład</th>
+                    <th>Oddział</th>
+                    <th>Lokalizacja</th>
+                    <th>Szafka</th>
+                    <th>Utworzony</th>
+                    <th>Ubrania</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="row-template-employees-to-assign" style="display: none">
+                    <td class="cell-full-name"></td>
+                    <td class="cell-position"></td>
+                    <td class="cell-plant-number"></td>
+                    <td class="cell-department"></td>
+                    <td class="cell-location"></td>
+                    <td class="cell-locker-number-and-box-number"></td>
+                    <td class="cell-creation-date"></td>
+                    <td class="td-button">
+                        <input type="button" value="Dodaj"
+                               class="button-add-clothes" style="display: none">
+                        <button type="button" class="button-edit-employee btn btn-outline-danger" style="display: none">
+                            Edytuj
+                        </button>
+                    </td>
+                    <td class="td-button"><input type="button" value="Przenieś"
+                                                 class="button-relocate-employee btn btn-outline-dark"></td>
+                    <td class="td-button"><input type="button" value="Zwolnij"
+                                                 class="button-dismiss-employee btn btn-outline-dark"></td>
+                    <td class="td-button"><input type="button" value="Usuń"
+                                                 class="button-delete-from-list btn btn-outline-secondary"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="div-employees-to-release" style="display: none">
+        <div class="row">
+            <div class="header-row col-sm-5">
+                <button id="button-check-employees-to-release" class="btn btn-danger" type="button">Sprawdź czy wydani
+                </button>
+            </div>
+        </div>
+        <span>Pracownicy wczytani (do wydania)</span>
+        <table id="table-of-employees-to-release" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Nazwisko i Imię</th>
+                <th>Stanowisko</th>
+                <th>Zakład</th>
+                <th>Oddział</th>
+                <th>Lokalizacja</th>
+                <th>Szafka</th>
+                <th>Utworzony</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="row-template-employees-to-release" style="display: none">
+                <td class="cell-full-name"></td>
+                <td class="cell-position"></td>
+                <td class="cell-plant-number"></td>
+                <td class="cell-department"></td>
+                <td class="cell-location"></td>
+                <td class="cell-locker-number-and-box-number"></td>
+                <td class="cell-creation-date"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<script src="js/measurement-list.js" defer></script>
+

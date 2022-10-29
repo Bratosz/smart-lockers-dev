@@ -1,0 +1,30 @@
+<div id="box-info" class="header-info"></div>
+<div class="gap-vertical-10"></div>
+<br>
+<!--ADDING EMPLOYEE-->
+<div class="row">
+    <div class="col-lg-4">
+        <form class="form">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nazwisko" id="input-last-name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Imię" id="input-first-name">
+            </div>
+            <div class="form-group">
+                <span>Oddział</span>
+                <select class="form-control" id="select-department"></select>
+            </div>
+            <div class="form-group">
+                <span>Stanowisko</span>
+                <select class="form-control" id="select-position"></select>
+            </div>
+
+            <button type="button" class="btn btn-danger" id="button-add-employee-to-box">Dodaj</button>
+            <button type="button" class="btn btn-secondary" id="button-assign-clothes"
+                    style="display: none">Przypisz ubrania</button>
+        </form>
+    </div>
+</div>
+
+<script src="js/add-employee-to-box.js" defer></script>

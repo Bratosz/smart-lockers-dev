@@ -1,0 +1,47 @@
+<main>
+    <!--FILTRATION-->
+    <div>
+        <div class="gap-vertical-5"></div>
+        <div class="display-inline">
+            <select class="form-control" id="select-plant"></select>
+        </div>
+        <div class="display-inline">
+            <select class="form-control" id="select-department"></select>
+        </div>
+        <div class="display-inline">
+            <select class="form-control" id="select-location"></select>
+        </div>
+        <div class="display-inline">
+            <input id="button-filter-lockers" class="btn btn-secondary" type="button" value="Filtruj">
+        </div>
+    </div>
+    <div class="gap-vertical-10"></div>
+    <div>
+        <table class="table table-striped col-10" id="table-of-lockers">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numer</th>
+                <th>Pojemność</th>
+                <th>Numer zakładu</th>
+                <th>Oddział</th>
+                <th>Lokalizacja</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="row-template" style="display: none">
+                <td class="cell-id"></td>
+                <td class="cell-locker-number"></td>
+                <td class="cell-capacity"></td>
+                <td class="cell-plant-number"></td>
+                <td class="cell-department"></td>
+                <td class="cell-location"></td>
+                <td><input type="button" value="pokaż"
+                           class="button-view-locker btn btn-outline-danger"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<script src="js/view-lockers.js" defer></script>
