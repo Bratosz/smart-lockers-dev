@@ -309,8 +309,28 @@
                                id="input-length-modification-for-order-clothes"
                                placeholder="N100/R100">
                         <button type="button" class="btn btn-secondary col-sm-6"
-                                id="button-add-order-for-order-clothes">Zamów
+                                id="button-for-order-clothes" data-toggle="modal" data-target="#modal-order-description">Zamów
                         </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal-order-description" tabindex="-1" role="dialog" aria-labelledby="modal-order" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modal-order">Opis wymiany</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input id="input-order-description" type="text" class="form-control" style="width: 460px">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+                                        <button id="button-confirm-for-order-clothes" type="button" data-dismiss="modal" class="btn btn-danger">Zatwierdź</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
                 <br>

@@ -7,6 +7,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class LocalDateConverter {
@@ -14,6 +15,11 @@ public class LocalDateConverter {
     public static String getDate(Date date){
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         return dateFormat.format(date);
+    }
+
+    public static String getDate(LocalDate date) {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        return dateTimeFormatter.format(date);
     }
 
     /**

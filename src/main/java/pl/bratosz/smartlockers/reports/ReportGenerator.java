@@ -30,7 +30,7 @@ public class ReportGenerator {
     public ReportGenerator(Set<Employee> employees) {
         this.employees = new TreeSet<>(employees);
         this.mainOrders = new LinkedList<>();
-        this.writer = new SpreadSheetWriter("Raport");
+        this.writer = new SpreadSheetWriter("Pracownicy");
         articlesAmounts = new TreeMap<>();
         reportedOrders = new HashSet<>();
     }
@@ -248,7 +248,7 @@ public class ReportGenerator {
     }
 
     private void createSummarySheet() {
-        writer.createSheet("Podsumowanie zamówienia");
+        writer.createSheet("Podsumowanie");
         createSummaryHeader(SMALL_BOLDED);
         AtomicInteger previousArticleNumber = new AtomicInteger(0);
         articlesAmounts.forEach((article, amounts) -> {
@@ -324,13 +324,13 @@ public class ReportGenerator {
                 .getArticle().getNumber());
         writer.set(CLOTHES_TO_EXCHANGE, getClothesToRelease(order));
         writer.set(CLOTHES_DEPRECIATED, getOrdinalNumbersOfDepreciatedClothes(order));
-        writer.set(ColumnDataType.EMPTY, "    -    ");
         if (order.getOrderType().equals(OrderType.CHANGE_ARTICLE)) {
             writer.set(ACTUAL_ARTICLE_NAME, order.getPreviousClientArticle()
                     .getArticle().getName());
             writer.set(ACTUAL_ARTICLE_NUMBER, order.getPreviousClientArticle()
                     .getArticle().getNumber());
         }
+        writer.set(ORDER_DESCRIPTION, order.getDescription());
     }
 
     private String getSizeWithLengthModification(MainOrder order) {
@@ -556,7 +556,6 @@ public class ReportGenerator {
 
     private void createGeneralReportHeader(Style style) {
         Map<ColumnDataType, Integer> columnIndexes = new HashMap<>();
-        columnIndexes.put(ORDINAL_NUMBER, 0);
         columnIndexes.put(DEPARTMENT, 1);
         columnIndexes.put(PLANT, 2);
         columnIndexes.put(LOCKER, 3);
@@ -569,9 +568,9 @@ public class ReportGenerator {
         columnIndexes.put(DESIRED_ARTICLE_NUMBER, 10);
         columnIndexes.put(CLOTHES_TO_EXCHANGE, 11);
         columnIndexes.put(CLOTHES_DEPRECIATED, 12);
-        columnIndexes.put(ColumnDataType.EMPTY, 13);
-        columnIndexes.put(ACTUAL_ARTICLE_NAME, 14);
-        columnIndexes.put(ACTUAL_ARTICLE_NUMBER, 15);
+        columnIndexes.put(ACTUAL_ARTICLE_NAME, 13);
+        columnIndexes.put(ACTUAL_ARTICLE_NUMBER, 14);
+        columnIndexes.put(ORDER_DESCRIPTION, 15);
         writer.addHeader(columnIndexes, style);
     }
 
@@ -628,7 +627,8 @@ public class ReportGenerator {
         BADGE_NUMBER("Nr emblematu"),
         FIRST_NAME("Imię"),
         LAST_NAME("Nazwisko"),
-        ORDINAL_ARTICLE_NUMBER("Egz.");
+        ORDINAL_ARTICLE_NUMBER("Egz."),
+        ORDER_DESCRIPTION("Opis");
 
         private String name;
 

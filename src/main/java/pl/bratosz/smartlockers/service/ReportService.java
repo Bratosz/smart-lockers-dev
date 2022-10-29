@@ -3,22 +3,24 @@ package pl.bratosz.smartlockers.service;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 import pl.bratosz.smartlockers.date.CurrentDate;
+import pl.bratosz.smartlockers.date.LocalDateConverter;
 import pl.bratosz.smartlockers.file.FileStorage;
 import pl.bratosz.smartlockers.model.Client;
 import pl.bratosz.smartlockers.model.ClientArticle;
 import pl.bratosz.smartlockers.model.Employee;
 import pl.bratosz.smartlockers.model.files.TemplateTypeForPlantLoad;
+import pl.bratosz.smartlockers.reports.ReportGenerator;
 import pl.bratosz.smartlockers.repository.ClientArticlesRepository;
 import pl.bratosz.smartlockers.repository.ClientRepository;
 import pl.bratosz.smartlockers.repository.UsersRepository;
 import pl.bratosz.smartlockers.response.DownloadFileResponse;
-import pl.bratosz.smartlockers.reports.ReportGenerator;
 import pl.bratosz.smartlockers.service.exels.ExcelUpdater;
 import pl.bratosz.smartlockers.service.exels.template.EmployeesToMeasureWriter;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -124,7 +126,8 @@ public class ReportService {
         ReportGenerator generator = new ReportGenerator(employees);
         XSSFWorkbook workbook = generator.generate();
         FileStorage fileStorage = new FileStorage();
-        DownloadFileResponse test = fileStorage.storeAndGet(workbook, "test");
+        LocalDate now = LocalDate.now();
+        DownloadFileResponse test = fileStorage.storeAndGet(workbook, LocalDateConverter.getDate(now) + " zgłoszenia");
         return test;
     }
 

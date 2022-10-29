@@ -2,19 +2,22 @@ reloadEmployee();
 loadDefaultBehaviour(
     $('#modal-exchange-description'),
     $('#input-exchange-description'));
+loadDefaultBehaviour(
+    $('#modal-order-description'),
+    $('#input-order-description'));
+
 
 $("#refresh-employee-button").click(function () {
-        updateEmployee();
+    updateEmployee();
 });
 
 $("#button-perform-action-on-main-orders").click(function () {
     performActionOnOrders();
 });
 
-$('#button-add-order-for-order-clothes').click(function () {
-    if (confirm("Czy na pewno?")) {
-        addExchangeOrder();
-    }
+$('#button-confirm-for-order-clothes').click(function () {
+    let $inputId = $('#input-order-description');
+    addExchangeOrder($inputId);
 });
 
 $('#button-add-length-modification-order').click(function () {
@@ -43,12 +46,13 @@ $('#button-length-modification').click(function () {
 });
 
 $('#button-confirm-exchange-clothes-for-new-ones').click(function () {
-        actualOrderType = "EXCHANGE_FOR_NEW_ONE";
-        addExchangeOrder();
+    actualOrderType = "EXCHANGE_FOR_NEW_ONE";
+    let $inputId = $('#input-exchange-description');
+    addExchangeOrder($inputId);
 });
 
 $('#button-change-article').click(function () {
-    if(loadedEmployee.position == null) {
+    if (loadedEmployee.position == null) {
         alert("Pracownik nie ma przypisanego stanowiska. Przypisz je klikając przycisk zmień, a następnie wybierz ponownie zmianę artykułu.");
     } else {
         setButtonAsClicked($(this), $('#button-change-size'), 'danger');
@@ -75,14 +79,14 @@ $('#select-article-to-change-for-order-clothes').change(function () {
 
 $('#button-return-rotational-clothes').click(function () {
     let barcodes = getCheckedBarcodes($('#table-of-rotational-clothes-body'));
-    if(barcodes.length > 0) {
+    if (barcodes.length > 0) {
         $.ajax({
             url: postReturnRotationalClothes(userId),
             method: 'post',
             contentType: 'application/json',
             data: JSON.stringify(barcodes),
-            success: function(response) {
-                if(response.succeed) {
+            success: function (response) {
+                if (response.succeed) {
                     reloadEmployee();
                     alert("Wycofano odzież");
                 } else {
@@ -156,19 +160,19 @@ function sendAutoExchange(barcode) {
 }
 
 function updateEmployee() {
-        $.ajax({
-            url: getUpdatedEmployee(employeeId),
-            method: 'get',
-            success: function (response) {
-                console.log(response);
-                if (response.succeed) {
-                    window.alert(response.message);
-                    displayEmployeeForEmployeeView(response.entity);
-                } else {
-                    window.alert(response.message);
-                }
+    $.ajax({
+        url: getUpdatedEmployee(employeeId),
+        method: 'get',
+        success: function (response) {
+            console.log(response);
+            if (response.succeed) {
+                window.alert(response.message);
+                displayEmployeeForEmployeeView(response.entity);
+            } else {
+                window.alert(response.message);
             }
-        });
+        }
+    });
 }
 
 function refreshOrders() {
@@ -192,7 +196,7 @@ function addNewArticle() {
         employeeId: loadedEmployee.id,
         orderType: actualOrderType
     };
-    if(parameters.quantity <= 0) alert("Ilość musi być większa niż 0");
+    if (parameters.quantity <= 0) alert("Ilość musi być większa niż 0");
     else {
         $.ajax({
             url: postNewOrdersBy(userId),
@@ -215,7 +219,7 @@ function addLengthModificationOrder() {
         orderType: "LENGTH_MODIFICATION",
         lengthModification: getLengthModificationFromInput($('#input-length-modification-for-modification-only'))
     }
-    if(parameters.lengthModification == "NONE") {
+    if (parameters.lengthModification == "NONE") {
         alert("Podano niewłaściwą wartość!")
     } else {
         console.log(parameters);
@@ -232,14 +236,14 @@ function addLengthModificationOrder() {
     }
 }
 
-function addExchangeOrder() {
+function addExchangeOrder($inputId) {
     let parameters = {
         barcodes: getCheckedBarcodes($('#table-of-clothes-body')),
         clientArticleId: getDesiredClientArticleId($('#select-desired-article-for-order-clothes')),
         size: getSize($('#input-size-for-order-clothes')),
         orderType: actualOrderType,
         lengthModification: getLengthModificationFromInput($('#input-length-modification-for-order-clothes')),
-        exchangeDescription: getValueFromInputText($('#input-exchange-description'))
+        exchangeDescription: getValueFromInputText($inputId)
     };
     console.log(parameters);
     $.ajax({
@@ -339,7 +343,7 @@ function addToManagedEmployees() {
 function displayArticlesToAddInAddPanel(position) {
     let $panel = $('#order-new-clothes-panel');
     let $select = $('#select-article-to-add');
-    if(position != null) {
+    if (position != null) {
         showFlex($panel);
         displayAvailableArticlesByPosition($select);
     } else {
@@ -349,7 +353,7 @@ function displayArticlesToAddInAddPanel(position) {
 
 function displayArticlesForChangeInExchangePanel(clientArticles) {
     let $panel = $('#div-exchange-clothes-panel');
-    if(clientArticles.length > 0) {
+    if (clientArticles.length > 0) {
         showFlex($panel);
         let $select = $('#select-article-to-change-for-order-clothes');
         removeOptionsFromSelect($select);
@@ -384,7 +388,7 @@ function displayClothesBeforeRelease(clothes) {
 }
 
 function displayRotationalClothes(clothes) {
-    if(clothes.length > 0) {
+    if (clothes.length > 0) {
         show($('#div-rotational-clothes'));
         writeClothesToTable($("#table-of-rotational-clothes-body"), clothes);
     } else {
@@ -393,16 +397,16 @@ function displayRotationalClothes(clothes) {
 }
 
 function displayAcceptedClothes(clothes) {
-    if(clothes.length > 0) {
+    if (clothes.length > 0) {
         show($('#div-accepted-clothes'));
         writeClothesToTable($("#table-of-accepted-clothes-body"), clothes);
-    }  else {
+    } else {
         hide($('#div-accepted-clothes'));
     }
 }
 
 function displayWithdrawnClothes(clothes) {
-    if(clothes.length > 0) {
+    if (clothes.length > 0) {
         show($('#div-withdrawn-clothes'));
         writeClothesToTable($("#table-of-withdrawn-clothes-body"), clothes);
     } else {

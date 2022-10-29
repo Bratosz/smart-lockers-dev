@@ -18,6 +18,10 @@ public class PastedEmployeeEDPL extends PastedEmployee {
     public PastedEmployeeEDPL() {
     }
 
+    public String getPastedEmployeeName() {
+        return employeeName;
+    }
+
     public String getEmployeeName() {
         return getLastName() + " " + getFirstName();
     }
@@ -35,12 +39,12 @@ public class PastedEmployeeEDPL extends PastedEmployee {
     }
 
     private void resolveEmployeeNamesAndGender() {
-        String s = MyString.create(employeeName).get();
-        if (s.isEmpty()) throw new IllegalArgumentException("Name can not be empty");
-        EmployeeNameAndGender e = NameExtractor.getInstance().get(s);
-        firstName = e.getFirstName();
-        lastName = e.getLastName();
-        gender = e.getGender();
+        String employeeFullName = MyString.create(employeeName).get();
+        if (employeeFullName.isEmpty()) throw new IllegalArgumentException("Name can not be empty");
+        EmployeeNameAndGender employeeWithNameAndGender = NameExtractor.getInstance().get(employeeFullName);
+        firstName = employeeWithNameAndGender.getFirstName();
+        lastName = employeeWithNameAndGender.getLastName();
+        gender = employeeWithNameAndGender.getGender();
     }
 
     @Override

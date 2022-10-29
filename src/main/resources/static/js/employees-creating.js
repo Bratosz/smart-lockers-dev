@@ -42,13 +42,13 @@ $('#button-post-employees-to-create').click(function () {
     })
 });
 
-$('#button-select-all-rows').click(function () {
+$('.button-select-all-rows').click(function () {
     $('#table-of-employees-to-create').find('tr:not(tr:nth-child(1))').each(function () {
         $(this).find('input[type="checkbox"]').prop('checked', true);
     });
 });
 
-$('#button-unselect-all-rows').click(function () {
+$('.button-unselect-all-rows').click(function () {
     $('#table-of-employees-to-create').find('input[type="checkbox"]').each(function () {
         $(this).prop('checked', false);
     });
@@ -59,6 +59,7 @@ $('#button-set-dep-pos-loc').click(function () {
         positionId = $('#select-position').val(),
         locationId = $('#select-location').val(),
         employeesIds = [];
+    console.log("sprawdzenie");
     getCheckedRows($('#table-of-employees-to-create')).forEach(
         r => employeesIds.push(getEmployeeIdFromRow(r)));
     $.ajax({

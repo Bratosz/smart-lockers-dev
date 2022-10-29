@@ -1,18 +1,17 @@
 package pl.bratosz.smartlockers.utils;
 
-import org.apache.poi.ss.formula.functions.T;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-import pl.bratosz.smartlockers.model.Client;
 import pl.bratosz.smartlockers.model.MyEntity;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.*;
 import java.util.function.Function;
@@ -144,6 +143,20 @@ public class Utils {
     public static boolean haveSameClient(SameClient... args) {
         List<SameClient> l = Arrays.asList(args);
         return haveSameClient(l);
+    }
+
+    public static boolean netIsAvailable() {
+        try {
+            final URL url = new URL("http://www.google.com");
+            final URLConnection conn = url.openConnection();
+            conn.connect();
+            conn.getInputStream().close();
+            return true;
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            return false;
+        }
     }
 
     private static boolean haveSameClient(List<SameClient> l) {

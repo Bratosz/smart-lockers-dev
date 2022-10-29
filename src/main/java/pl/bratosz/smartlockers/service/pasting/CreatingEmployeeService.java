@@ -47,15 +47,17 @@ public class CreatingEmployeeService {
     public StandardResponse add(long userId, List<PastedEmployeeEDPL> employees) {
         long clientId = usersRepository.getActualClientId(userId);
         Client client = clientRepository.getById(clientId);
-        employees.forEach(e -> createEmployeeToCreate(e, client));
+        boolean netIsAvailable = Utils.netIsAvailable();
+        employees.forEach(e -> createEmployeeToCreate(e, client, netIsAvailable));
         return StandardResponse.createForSucceed();
     }
 
-    private void createEmployeeToCreate(PastedEmployeeEDPL e, Client c) {
+    private void createEmployeeToCreate(PastedEmployeeEDPL e, Client c, boolean netIsAvailable) {
         Department d = departmentService.getByAliasAndClientId(e.getDepartment(), c.getId());
         Location l = locationService.getByNameAndClientId(e.getLocation(), c.getId());
         Position p = positionService.get(e.getPosition(), c);
-        EmployeeToCreate employeeToCreate = EmployeeToCreate.createWithDepartmentPositionAndLocation(e, d, l, p, c);
+        EmployeeToCreate employeeToCreate = EmployeeToCreate
+                .createWithDepartmentPositionAndLocation(e, d, l, p, c, netIsAvailable);
         employeesToCreateRepository.save(employeeToCreate);
     }
 

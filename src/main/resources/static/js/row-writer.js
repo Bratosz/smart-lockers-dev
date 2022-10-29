@@ -103,10 +103,13 @@ function writeEmployeeToCreateToRow(employee, $row) {
     loadSelectInRowForEmployeeToCreate(
         $selectDepartment, loadedClient.departments, employee.department, "Wybierz oddział");
     loadPositionsForEmployeeToCreate(
-        $selectPosition, getPositionsByDepartment(employee.department, loadedClient.departments), employee.position, "Wybierz stanowisko");
+        $selectPosition,
+        getPositionsByDepartment(employee.department, loadedClient.departments),
+        employee.position,
+        "Wybierz stanowisko");
     loadSelectInRowForEmployeeToCreate(
         $selectLocation, loadedClient.locations, employee.location, "Wybierz lokalizację");
-    rowClickedBehaviour($row);
+    // rowClickedBehaviour($row);
     $row.find('.button-swap-names').click(function () {
        swapNames(employee.id);
     });

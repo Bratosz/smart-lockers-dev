@@ -431,10 +431,9 @@ function getPositionsByDepartment(department, departments) {
         for(let d of departments) {
             if(d.id == department.id) {
                 return d.positions;
-            } else {
-                return positions;
             }
         }
+        return positions;
     }
 }
 

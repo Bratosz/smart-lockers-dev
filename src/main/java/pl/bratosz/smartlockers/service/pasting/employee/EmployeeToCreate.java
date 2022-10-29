@@ -6,6 +6,9 @@ import pl.bratosz.smartlockers.service.jgenderize.model.Gender;
 import pl.bratosz.smartlockers.utils.SameClient;
 
 import javax.persistence.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Entity
@@ -46,12 +49,21 @@ public class EmployeeToCreate implements SameClient {
     public EmployeeToCreate() {
     }
 
-    public static EmployeeToCreate createWithDepartmentPositionAndLocation(PastedEmployeeEDPL e, Department d, Location l, Position p, Client c) {
+    public static EmployeeToCreate createWithDepartmentPositionAndLocation(
+            PastedEmployeeEDPL e, Department d, Location l, Position p, Client c, boolean netIsAvailable) {
         EmployeeToCreate newEmployee = new EmployeeToCreate();
         newEmployee.setPersonalNumber(e.getPersonalNumber());
-        newEmployee.setFirstName(e.getFirstName());
-        newEmployee.setLastName(e.getLastName());
-        newEmployee.setGender(e.getGender());
+        if(netIsAvailable) {
+            newEmployee.setFirstName(e.getFirstName());
+            newEmployee.setLastName(e.getLastName());
+            newEmployee.setGender(e.getGender());
+        } else {
+            String[] split = e.getPastedEmployeeName().split("\\s+");
+            List<String> names = Arrays.stream(split).collect(Collectors.toList());
+            newEmployee.setLastName(names.get(0));
+            newEmployee.setFirstName(names.get(1));
+            newEmployee.setGender(Gender.NULL);
+        }
         newEmployee.setDepartment(d);
         newEmployee.setLocation(l);
         newEmployee.setPosition(p);
