@@ -156,8 +156,8 @@ function removeObjectFromArrayByFieldValue(
 
 function getValueFromInputText($input) {
     let val = $input.val();
-    if(val.length == 0) {
-        return " ";
+    if(val === undefined || val.length == 0) {
+        return "";
     } else {
         return val;
     }
@@ -223,3 +223,6 @@ function empty(v) {
         return false;
     }
 }
+
+const allElementsAreEqual = array => array.every(e => e === array[0]);
+

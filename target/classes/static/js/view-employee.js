@@ -20,14 +20,6 @@ $('#button-confirm-for-order-clothes').click(function () {
     addExchangeOrder($inputId);
 });
 
-$('#button-add-length-modification-order').click(function () {
-    alert("Ta funkcja nie jest aktywna");
-});
-
-$('#button-add-repair-order').click(function () {
-    alert("Ta funkcja nie jest aktywna");
-});
-
 $('#select-department').change(function () {
     loadPositionsByDepartment($('#select-department'), $('#select-position'));
 });
@@ -49,6 +41,11 @@ $('#button-confirm-exchange-clothes-for-new-ones').click(function () {
     actualOrderType = "EXCHANGE_FOR_NEW_ONE";
     let $inputId = $('#input-exchange-description');
     addExchangeOrder($inputId);
+});
+
+$('#button-add-repair-order').click(function () {
+    actualOrderType = "REPAIR";
+    addRepairOrder();
 });
 
 $('#button-change-article').click(function () {
@@ -236,6 +233,16 @@ function addLengthModificationOrder() {
     }
 }
 
+function addRepairOrder() {
+    let parameters = {
+        barcodes: getCheckedBarcodes($('#table-of-clothes-body')),
+        orderType: actualOrderType
+    };
+    validateSelectedClothes($('#table-of-clothes-body'), function () {
+        console.log("udalosie");
+    });
+}
+
 function addExchangeOrder($inputId) {
     let parameters = {
         barcodes: getCheckedBarcodes($('#table-of-clothes-body')),
@@ -245,7 +252,7 @@ function addExchangeOrder($inputId) {
         lengthModification: getLengthModificationFromInput($('#input-length-modification-for-order-clothes')),
         exchangeDescription: getValueFromInputText($inputId)
     };
-    console.log(parameters);
+
     $.ajax({
         url: postNewOrdersBy(userId),
         method: 'post',
