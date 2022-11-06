@@ -10,7 +10,8 @@ function checkedClothesHaveTheSameArticleNumber($tableBody) {
     return allElementsAreEqual(articleNumbers);
 }
 
-function validateSelectedClothes($tableBody, action) {
+function validateSelectedClothes(action) {
+    let $tableBody = $('#table-of-clothes-body');
     if(checkedClothesHaveTheSameArticleNumber($tableBody)) {
         action();
     } else {

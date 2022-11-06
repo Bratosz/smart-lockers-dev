@@ -211,26 +211,29 @@ function addNewArticle() {
 }
 
 function addLengthModificationOrder() {
-    let parameters = {
-        barcodes: getCheckedBarcodes($('#table-of-clothes-body')),
-        orderType: "LENGTH_MODIFICATION",
-        lengthModification: getLengthModificationFromInput($('#input-length-modification-for-modification-only'))
-    }
-    if (parameters.lengthModification == "NONE") {
-        alert("Podano niewłaściwą wartość!")
-    } else {
-        console.log(parameters);
-        $.ajax({
-            url: postNewOrdersBy(userId),
-            method: 'post',
-            contentType: 'application/json',
-            data: JSON.stringify(parameters),
-            success: function (response) {
-                window.alert(response.message);
-                reloadEmployee();
-            }
-        })
-    }
+    validateSelectedClothes(function () {
+        alert("Ta funkcja nie jest aktywna");
+        // let parameters = {
+        //     barcodes: getCheckedBarcodes($('#table-of-clothes-body')),
+        //     orderType: "LENGTH_MODIFICATION",
+        //     lengthModification: getLengthModificationFromInput($('#input-length-modification-for-modification-only'))
+        // }
+        // if (parameters.lengthModification == "NONE") {
+        //     alert("Podano niewłaściwą wartość!")
+        // } else {
+        //     console.log(parameters);
+        //     $.ajax({
+        //         url: postNewOrdersBy(userId),
+        //         method: 'post',
+        //         contentType: 'application/json',
+        //         data: JSON.stringify(parameters),
+        //         success: function (response) {
+        //             window.alert(response.message);
+        //             reloadEmployee();
+        //         }
+        //     })
+        // }
+    });
 }
 
 function addRepairOrder() {
@@ -238,30 +241,31 @@ function addRepairOrder() {
         barcodes: getCheckedBarcodes($('#table-of-clothes-body')),
         orderType: actualOrderType
     };
-    validateSelectedClothes($('#table-of-clothes-body'), function () {
-        console.log("udalosie");
+    validateSelectedClothes( function () {
+        alert("Ta funkcja jest nieaktywna");
     });
 }
 
 function addExchangeOrder($inputId) {
-    let parameters = {
-        barcodes: getCheckedBarcodes($('#table-of-clothes-body')),
-        clientArticleId: getDesiredClientArticleId($('#select-desired-article-for-order-clothes')),
-        size: getSize($('#input-size-for-order-clothes')),
-        orderType: actualOrderType,
-        lengthModification: getLengthModificationFromInput($('#input-length-modification-for-order-clothes')),
-        exchangeDescription: getValueFromInputText($inputId)
-    };
-
-    $.ajax({
-        url: postNewOrdersBy(userId),
-        method: 'post',
-        contentType: "application/json",
-        data: JSON.stringify(parameters),
-        success: function (response) {
-            window.alert(response.message);
-            reloadEmployee();
-        }
+    validateSelectedClothes(function () {
+        let parameters = {
+            barcodes: getCheckedBarcodes($('#table-of-clothes-body')),
+            clientArticleId: getDesiredClientArticleId($('#select-desired-article-for-order-clothes')),
+            size: getSize($('#input-size-for-order-clothes')),
+            orderType: actualOrderType,
+            lengthModification: getLengthModificationFromInput($('#input-length-modification-for-order-clothes')),
+            exchangeDescription: getValueFromInputText($inputId)
+        };
+        $.ajax({
+            url: postNewOrdersBy(userId),
+            method: 'post',
+            contentType: "application/json",
+            data: JSON.stringify(parameters),
+            success: function (response) {
+                window.alert(response.message);
+                reloadEmployee();
+            }
+        });
     });
 }
 

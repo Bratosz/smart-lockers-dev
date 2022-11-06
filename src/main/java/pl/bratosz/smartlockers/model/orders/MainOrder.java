@@ -256,7 +256,11 @@ public class MainOrder implements Comparable<MainOrder>, MyEntity {
     }
 
     public String getDescription() {
-        return description;
+        if(description == null) {
+            return "";
+        } else {
+            return description;
+        }
     }
 
     public void setDescription(String description) {
