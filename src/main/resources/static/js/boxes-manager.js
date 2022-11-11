@@ -18,7 +18,7 @@ function writeBoxToRowForLockerView(box, $row) {
         $row.find('.button-employee-import').css('display', 'none');
         $row.find('.button-employee-export').click(function () {
             employeeId = employee.id;
-            loadContent($('#div-content-1'),'employee-relocate.html', false)
+            loadContent($('#div-content-1'),'employee-edit.html', false)
         });
         $row.find(".button-dismiss-employee").css('display', 'table-cell');
         $row.find(".button-add-employee").css('display', 'none');

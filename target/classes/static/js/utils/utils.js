@@ -159,8 +159,15 @@ function getValueFromInputText($input) {
     if(val === undefined || val.length == 0) {
         return "";
     } else {
+        val.trim().toUpperCase();
         return val;
     }
+}
+
+function getValueFromInputTextOrDashIfEmpty($input) {
+    let val = getValueFromInputText($input);
+    if(val.length == 0) return "-";
+    else return val;
 }
 
 

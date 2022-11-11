@@ -42,12 +42,12 @@ function writeEmployeeInfoToElement(employee, $element) {
     boxNumber = employee.box.boxNumber;
     lastName = employee.lastName;
     firstName = employee.firstName;
-    $element.text(
-        location +
-        " " + plantNumber +
-        " " + lockerNumber + "/" + boxNumber +
-        " " + lastName +
-        " " + firstName);
+        $element.text(
+            plantNumber +
+            " " + lockerNumber + "/" + boxNumber +
+            " " + lastName +
+            " " + firstName);
+
 }
 
 function displayEmployeeForEmployeeView(employee) {

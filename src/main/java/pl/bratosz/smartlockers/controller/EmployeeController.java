@@ -150,24 +150,24 @@ public class EmployeeController {
     }
 
     @JsonView(Views.InternalForEmployees.class)
-    @PostMapping("/change_last_name_by_id/{id}")
-    public Employee changeEmployeeLastNameById(
-            @RequestBody Employee employee, @PathVariable Long id) {
-        return employeeService.changeEmployeeLastName(employee.getLastName(), id);
+    @PostMapping("/change-name/{employeeId}/{lastName}/{firstName}")
+    public StandardResponse changeName(
+            @PathVariable Long employeeId, @PathVariable String lastName, @PathVariable String firstName) {
+        return employeeService.changeName(employeeId, lastName, firstName);
     }
 
     @JsonView(Views.InternalForEmployees.class)
-    @PostMapping("/change_first_name_by_id/{id}")
-    public Employee changeEmployeeFirstNameById(
-            @RequestBody Employee employee, @PathVariable Long id) {
-        return employeeService.changeEmployeeFirstNameById(employee.getFirstName(), id);
+    @PostMapping("/change-first-name/{employeeId}/{firstName}")
+    public StandardResponse changeFirstName(
+            @PathVariable Long employeeId, @PathVariable String firstName) {
+        return employeeService.changeFirstName(employeeId, firstName);
     }
 
     @JsonView(Views.InternalForEmployees.class)
-    @PostMapping("/change_first_name_and_last_name_by_id/{id}")
-    public Employee changeEmployeeFirstAndLastNameById(
-            @RequestBody Employee employee, @PathVariable Long id) {
-        return employeeService.changeEmployeeFirstNameAndLastNameById(employee, id);
+    @PostMapping("/change-last-name/{employeeId}/{lastName}")
+    public StandardResponse changeLastName(
+            @PathVariable Long employeeId, @PathVariable String lastName) {
+        return employeeService.changeLastName(employeeId, lastName);
     }
 
     @JsonView(Views.InternalForEmployees.class)

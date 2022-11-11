@@ -21,6 +21,7 @@ import pl.bratosz.smartlockers.service.managers.EmployeeManager;
 import pl.bratosz.smartlockers.service.pasting.employee.EmployeeToCreate;
 import pl.bratosz.smartlockers.service.update.ScrapingService;
 import pl.bratosz.smartlockers.utils.Utils;
+import pl.bratosz.smartlockers.utils.string.MyString;
 
 import java.util.*;
 
@@ -314,18 +315,32 @@ public class EmployeeService {
         return employeesRepository.save(employee);
     }
 
-
-    public Employee changeEmployeeLastName(String lastName, Long id) {
-        Employee employee = getById(id);
-        employee.setLastName(lastName);
-        return employeesRepository.save(employee);
+    public StandardResponse changeName(Long employeeId, String lastName, String firstName) {
+        Employee employee = employeesRepository.getEmployeeById(employeeId);
+        lastName = MyString.create(lastName).get();
+        firstName = MyString.create(firstName).get();
+        if(!lastName.equals("-")) employee.setLastName(lastName);
+        if(!firstName.equals("-")) employee.setFirstName(firstName);
+        employee = employeesRepository.save(employee);
+        return StandardResponse.createForSucceed(employee);
     }
 
-    public Employee changeEmployeeFirstNameById(String firstName, Long id) {
-        Employee employee = getById(id);
+    public StandardResponse changeFirstName(Long employeeId, String firstName) {
+        Employee employee = employeesRepository.getEmployeeById(employeeId);
+        firstName = MyString.create(firstName).get();
         employee.setFirstName(firstName);
-        return employeesRepository.save(employee);
+        employee = employeesRepository.save(employee);
+        return StandardResponse.createForSucceed(employee);
     }
+
+    public StandardResponse changeLastName(Long employeeId, String lastName) {
+        Employee employee = employeesRepository.getEmployeeById(employeeId);
+        lastName = MyString.create(lastName).get();
+        employee.setLastName(lastName);
+        employee = employeesRepository.save(employee);
+        return StandardResponse.createForSucceed(employee);
+    }
+
 
     public Integer deleteEmployeeById(Long id) {
         return employeesRepository.deleteEmployeeById(id);
@@ -637,15 +652,25 @@ public class EmployeeService {
 
     public List<EmployeeWithActiveOrders> getWithActiveOrders(long userId) {
         long clientId = usersRepository.getActualClientId(userId);
-        return  employeesRepository.getWithActiveOrders(clientId);
+        return employeesRepository.getWithActiveOrders(clientId);
     }
 
     public List<EmployeeWithActiveOrders> getWithActiveOrdersByOrderType(long userId, OrderType orderType) {
         long clientId = usersRepository.getActualClientId(userId);
-        if(orderType.equals(OrderType.ALL)) {
+        if (orderType.equals(OrderType.ALL)) {
             return employeesRepository.getWithActiveOrders(clientId);
         } else {
             return employeesRepository.getWithActiveOrdersByOrderType(clientId, orderType);
         }
+    }
+
+    public StandardResponse changeEmployeeName(Long employeeId, String lastName, String firstName) {
+        Employee employee = employeesRepository.getEmployeeById(employeeId);
+        lastName = MyString.create(lastName).get();
+        firstName = MyString.create(firstName).get();
+        if (!lastName.isEmpty()) employee.setLastName(lastName);
+        if (!firstName.isEmpty()) employee.setFirstName(firstName);
+        employee = employeesRepository.save(employee);
+        return StandardResponse.createForSucceed(employee);
     }
 }

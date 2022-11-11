@@ -140,11 +140,11 @@ function writeBoxToRow(box, $row) {
             employeeId = employee.id;
             loadContent($('#div-content-1'),'view-employee.html', false);
         });
-        $row.find('.button-employee-export').css('display', 'table-cell');
+        $row.find('.button-employee-edit').css('display', 'table-cell');
         $row.find('.button-employee-import').css('display', 'none');
-        $row.find('.button-employee-export').click(function () {
+        $row.find('.button-employee-edit').click(function () {
             employeeId = employee.id;
-            loadContent($('#div-content-1'),'employee-relocate.html', false);
+            loadContent($('#div-content-1'),'employee-edit.html', false);
         });
         $row.find(".button-dismiss-employee").css('display', 'table-cell');
         $row.find(".button-add-employee").css('display', 'none');
@@ -158,7 +158,7 @@ function writeBoxToRow(box, $row) {
             updateBox(box.id);
         });
         $row.find('.button-employee-import').css('display', 'table-cell');
-        $row.find('.button-employee-export').css('display', 'none');
+        $row.find('.button-employee-edit').css('display', 'none');
         $row.find('.button-employee-import').click(function () {
             alert("Ta funkcja nie jest aktywna.");
         });
@@ -271,7 +271,7 @@ function writeEmployeeToRowOfMeasurementList(employee, $row) {
     }
     $row.find('.button-relocate-employee').click(function () {
         employeeId = employee.id;
-        loadContent($('#div-content-1'),'employee-relocate.html', false);
+        loadContent($('#div-content-1'),'employee-edit.html', false);
     });
     $row.find('.button-dismiss-employee').click(function () {
         if (confirm('Czy na pewno chcesz zwolnić pracownika ' +

@@ -15,7 +15,7 @@ self.addEventListener('install', function (e) {
                 'create-client-from-file.html',
                 'edit-departments.html',
                 'edit-employee.html',
-                'employee-relocate.html',
+                'employee-edit.html',
                 'empty.html',
                 'index.html',
                 'kls_logo.jpg',
@@ -55,7 +55,7 @@ self.addEventListener('install', function (e) {
                 '/js/create-client-from-file.js',
                 '/js/edit-departments.js',
                 '/js/edit-employee.js',
-                '/js/employee-relocate.js',
+                '/js/employee-edit.js',
 
                 '/js/employees-manager.js',
                 '/js/end-points.js',
