@@ -5,18 +5,25 @@
 <br>
 
 <div class="row">
-    <div class="col-lg-10">
+    <div class="col-lg-12">
         <!--    HEADER  -->
         <div class="row col-lg-10">
-            <div id="info-employee" class="col-sm-6" style="font-size: 25px;"></div>
+            <div id="info-employee" class="col-sm-10" style="font-size: 25px;"></div>
         </div>
         <div class="gap-vertical-10"></div>
-        <!--    CHANGING NAME   -->
+        <!--    CHANGING LAST NAME   -->
         <form class="form-inline">
-            <div class="form-group col-lg-12">
-                <input id="input-last-name" placeholder="Nazwisko" class="form-control col-lg-5" type="text">
-                <input id="input-first-name" placeholder="Imię" class="form-control col-lg-5" type="text">
-                <button id="button-change-employee-name" class="btn btn-danger col-lg-2" type="button">Zmień</button>
+            <div class="form-group col-lg-6">
+                <input id="input-last-name" placeholder="Nazwisko" class="form-control col-lg-10" type="text">
+                <button id="button-change-employee-last-name" class="btn btn-danger col-lg-2" type="button">Zmień</button>
+            </div>
+        </form>
+        <div class="gap-vertical-10"></div>
+        <!--        CHANGING FIRST NAME     -->
+        <form class="form-inline">
+            <div class="form-group col-lg-6">
+                <input id="input-first-name" placeholder="Imię" class="form-control col-lg-10" type="text">
+                <button id="button-change-employee-first-name" class="btn btn-danger col-lg-2" type="button">Zmień</button>
             </div>
         </form>
         <br>
@@ -25,17 +32,33 @@
             <div class="form-group col-lg-12">
                 <select class="form-control col-lg-3" id="select-plant"></select>
                 <select class="form-control col-lg-2" id="select-department"></select>
-                <select class="form-control col-lg-4" id="select-location"></select>
-                <input class="form-control col-lg-1" id="input-box-number" placeholder="_/_" style="text-align: center">
-                <button type="button" class="btn btn-danger col-lg-1" id="button-relocate-employee">Przenieś</button>
-                <button type="button" class="btn btn-secondary col-lg-1" id="button-load-empty-boxes">Wczytaj</button>
+                <select class="form-control col-lg-5" id="select-location"></select>
+                <button id="button-relocate-employee-to-first-free-box" type="button" class="btn btn-danger col-lg-2">
+                    Przenieś
+                </button>
+            </div>
+        </form>
+        <br>
+        <!--        MOVING TO EXACT BOX     -->
+        <form class="form-inline">
+            <div class="form-group col-lg-12">
+                <select class="form-control col-lg-2" id="select-plant-for-exact-box"></select>
+                <select class="form-control col-lg-2" id="select-department-for-exact-box"></select>
+                <select class="form-control col-lg-4" id="select-location-for-exact-box"></select>
+                <input id="input-locker-number" class="form-control col-lg-1" type="number" placeholder="Szafa"
+                       style="text-align: center">
+                <input id="input-box-number" class="form-control col-lg-1" type="number" placeholder="Box"
+                       style="text-align: center">
+                <button id="button-relocate-employee-to-exact-box" type="button" class="btn btn-danger col-lg-1">
+                    Przenieś
+                </button>
+                <button id="button-load-empty-boxes" type="button" class="btn btn-secondary col-lg-1">Wczytaj</button>
             </div>
             <div id="div-available-empty-boxes" class="col-lg-12" style="display: none">
                 <div class="col-form-label col-lg-2">Dostępne szafki:</div>
                 <div id="text-available-empty-boxes" class="col-form-label col-lg-10"></div>
             </div>
         </form>
-        <br>
     </div>
 </div>
 

@@ -9,7 +9,6 @@ loadBoxes();
 loadBoxByCtrlPlusNumber();
 
 $("#button-filter").click(function () {
-    console.log("klik");
     let plantId = $("#select-plant").val();
     let departmentId = $("#select-department").val();
     let locationId = $("#select-location").val();

@@ -25,6 +25,7 @@ import pl.bratosz.smartlockers.utils.string.MyString;
 
 import java.util.*;
 
+import static pl.bratosz.smartlockers.model.Box.BoxStatus.FREE;
 import static pl.bratosz.smartlockers.model.Box.BoxStatus.OCCUPY;
 
 @Service
@@ -315,17 +316,7 @@ public class EmployeeService {
         return employeesRepository.save(employee);
     }
 
-    public StandardResponse changeName(Long employeeId, String lastName, String firstName) {
-        Employee employee = employeesRepository.getEmployeeById(employeeId);
-        lastName = MyString.create(lastName).get();
-        firstName = MyString.create(firstName).get();
-        if(!lastName.equals("-")) employee.setLastName(lastName);
-        if(!firstName.equals("-")) employee.setFirstName(firstName);
-        employee = employeesRepository.save(employee);
-        return StandardResponse.createForSucceed(employee);
-    }
-
-    public StandardResponse changeFirstName(Long employeeId, String firstName) {
+    public StandardResponse changeFirstName(Long employeeId, String firstName, long userId) {
         Employee employee = employeesRepository.getEmployeeById(employeeId);
         firstName = MyString.create(firstName).get();
         employee.setFirstName(firstName);
@@ -333,7 +324,7 @@ public class EmployeeService {
         return StandardResponse.createForSucceed(employee);
     }
 
-    public StandardResponse changeLastName(Long employeeId, String lastName) {
+    public StandardResponse changeLastName(Long employeeId, String lastName, long userId) {
         Employee employee = employeesRepository.getEmployeeById(employeeId);
         lastName = MyString.create(lastName).get();
         employee.setLastName(lastName);
@@ -412,17 +403,38 @@ public class EmployeeService {
             long plantId,
             long departmentId,
             long locationId,
-            long employeeId) {
-        Box newBox = boxService.findNextFreeBox(plantId, departmentId, locationId);
-        if (newBox.getLocker() == null) {
-            return StandardResponse.createForFailure("Nie znaleziono wolnej szafki");
+            long employeeId,
+            long userId) {
+        Box newBox = null;
+        try {
+            newBox = boxService.findNextFreeBox(plantId, departmentId, locationId);
+            Employee employee = employeesRepository.getEmployeeById(employeeId);
+            return relocate(employee, newBox);
+        } catch (MyException e) {
+            return StandardResponse.createForFailure(e.getMessage());
         }
-        Employee employee = employeesRepository.getEmployeeById(employeeId);
+    }
+
+    private StandardResponse relocate(Employee employee, Box newBox) {
         Box releasedBox = boxService.releaseBox(employee.getBox());
         SimpleBox simpleBox = new SimpleBox(releasedBox);
         employee.setAsPastBox(simpleBox);
-        assignToBox(employee, newBox);
-        return StandardResponse.createForSucceed("Przeniesiono do szafki " + newBox.toString());
+        employee = assignToBox(employee, newBox);
+        return StandardResponse.createForSucceed("Przeniesiono do szafki " + newBox.toString(), employee);
+    }
+
+    public StandardResponse relocateToExactBox(long plantId, long employeeId, int lockerNumber, int boxNumber, long userId) {
+        try {
+            Box newBox = boxService.getBox(plantId, lockerNumber, boxNumber);
+            if(newBox.getBoxStatus().equals(FREE)) {
+                Employee employee = employeesRepository.getEmployeeById(employeeId);
+                return relocate(employee, newBox);
+            } else {
+                return StandardResponse.createForFailure("Ta szafka nie jest pusta");
+            }
+        } catch (MyException e) {
+            return StandardResponse.createForFailure(e.getMessage());
+        }
     }
 
     private Employee assignToBox(Employee employee, Box freeBox) {

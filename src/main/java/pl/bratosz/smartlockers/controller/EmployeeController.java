@@ -150,24 +150,21 @@ public class EmployeeController {
     }
 
     @JsonView(Views.InternalForEmployees.class)
-    @PostMapping("/change-name/{employeeId}/{lastName}/{firstName}")
-    public StandardResponse changeName(
-            @PathVariable Long employeeId, @PathVariable String lastName, @PathVariable String firstName) {
-        return employeeService.changeName(employeeId, lastName, firstName);
-    }
-
-    @JsonView(Views.InternalForEmployees.class)
-    @PostMapping("/change-first-name/{employeeId}/{firstName}")
+    @PostMapping("/change-first-name/{employeeId}/{firstName}/{userId}")
     public StandardResponse changeFirstName(
-            @PathVariable Long employeeId, @PathVariable String firstName) {
-        return employeeService.changeFirstName(employeeId, firstName);
+            @PathVariable Long employeeId,
+            @PathVariable String firstName,
+            @PathVariable long userId) {
+        return employeeService.changeFirstName(employeeId, firstName, userId);
     }
 
     @JsonView(Views.InternalForEmployees.class)
-    @PostMapping("/change-last-name/{employeeId}/{lastName}")
-    public StandardResponse changeLastName(
-            @PathVariable Long employeeId, @PathVariable String lastName) {
-        return employeeService.changeLastName(employeeId, lastName);
+    @PostMapping("/change-last-name/{employeeId}/{lastName}/{userId}")
+    public StandardResponse changeName(
+            @PathVariable Long employeeId,
+            @PathVariable String lastName,
+            @PathVariable long userId) {
+        return employeeService.changeLastName(employeeId, lastName, userId);
     }
 
     @JsonView(Views.InternalForEmployees.class)
@@ -177,17 +174,31 @@ public class EmployeeController {
         return employeeService.changeDepartment(employee.getDepartment(), id);
     }
 
-    @PostMapping("/relocate/{plantId}/{departmentId}/{locationId}/{employeeId}")
+    @JsonView(Views.InternalForEmployees.class)
+    @PostMapping("/relocate/{plantId}/{departmentId}/{locationId}/{employeeId}/{userId}")
     public StandardResponse relocate(
             @PathVariable long plantId,
             @PathVariable long departmentId,
             @PathVariable long locationId,
-            @PathVariable long employeeId) {
+            @PathVariable long employeeId,
+            @PathVariable long userId) {
         return employeeService.relocate(
                 plantId,
                 departmentId,
                 locationId,
-                employeeId);
+                employeeId,
+                userId);
+    }
+
+    @JsonView(Views.InternalForEmployees.class)
+    @PostMapping("/relocate-to-exact-box/{plantId}/{employeeId}/{lockerNumber}/{boxNumber}/{userId}")
+    public StandardResponse relocateToExactBox(
+            @PathVariable long plantId,
+            @PathVariable long employeeId,
+            @PathVariable int lockerNumber,
+            @PathVariable int boxNumber,
+            @PathVariable long userId) {
+        return employeeService.relocateToExactBox(plantId, employeeId, lockerNumber, boxNumber, userId);
     }
 
     @JsonView(Views.EmployeeCompleteInfo.class)

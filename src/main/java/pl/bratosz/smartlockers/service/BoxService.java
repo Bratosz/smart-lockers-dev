@@ -3,10 +3,7 @@ package pl.bratosz.smartlockers.service;
 import org.jsoup.nodes.Element;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.bratosz.smartlockers.exception.BoxNotAvailableException;
-import pl.bratosz.smartlockers.exception.ClothException;
-import pl.bratosz.smartlockers.exception.EmptyElementException;
-import pl.bratosz.smartlockers.exception.MultipleBoxException;
+import pl.bratosz.smartlockers.exception.*;
 import pl.bratosz.smartlockers.model.*;
 import pl.bratosz.smartlockers.model.clothes.Cloth;
 import pl.bratosz.smartlockers.model.users.User;
@@ -67,16 +64,14 @@ public class BoxService {
     public Box findNextFreeBox(
             long plantId,
             long departmentId,
-            long locationId) {
+            long locationId) throws MyException {
         Box.BoxStatus boxStatus = FREE;
-        return boxesRepository.getBoxesByParameters(
-                plantId,
-                departmentId,
-                locationId,
-                boxStatus)
-                .stream()
-                .findFirst()
-                .orElse(new Box());
+        List<Box> filtered = getFiltered(plantId, departmentId, locationId, boxStatus);
+        if(filtered.isEmpty()) {
+            throw new MyException("Nie znaleziono wolnej szafki o tych parametrach.");
+        } else {
+            return filtered.get(0);
+        }
     }
 
 
@@ -138,34 +133,6 @@ public class BoxService {
         }
     }
 
-    public Box changeEmployeeBoxOnNextFree(int lockerNumber, int boxNumber,
-                                           long plantId, Department targetDep,
-                                           Location targetLocation, int targetPlantNumber, long userId) throws BoxNotAvailableException {
-        user = userService.getUserById(userId);
-        loadUser(user);
-        Box oldBox = getBox(plantId, lockerNumber, boxNumber);
-        Box freeBox = findNextFreeBox(targetDep, targetPlantNumber, targetLocation);
-        EmployeeGeneral employee = extractEmployee(oldBox);
-        return setEmployee(employee, freeBox);
-    }
-
-    public Box changeEmployeeBox(long userId, int lockerNumber, int boxNumber, long plantId,
-                                 int targetLockerNumber, int targetBoxNumber,
-                                 long targetPlantId) throws BoxNotAvailableException {
-        User user = userService.getUserById(userId);
-        loadUser(user);
-        Box newBox = getBox(targetPlantId, targetLockerNumber, targetBoxNumber);
-
-        if (newBox.getBoxStatus().equals(OCCUPY)) {
-            throw new BoxNotAvailableException("Szafka o numerze: " + targetLockerNumber + "/" + targetBoxNumber
-                    + "jest niedostępna");
-        } else {
-            Box oldBox = getBox(plantId, lockerNumber, boxNumber);
-            EmployeeGeneral employee = extractEmployee(oldBox);
-            return setEmployee(employee, newBox);
-        }
-    }
-
     public List<Box> findAll() {
         return boxesRepository.findAll();
     }
@@ -175,8 +142,10 @@ public class BoxService {
         return boxesRepository.getBox(lockerNumber, boxNumber, location, plantNumber);
     }
 
-    public Box getBox(long plantId, int lockerNumber, int boxNumber) {
-        return boxesRepository.getBox(plantId, lockerNumber, boxNumber);
+    public Box getBox(long plantId, int lockerNumber, int boxNumber) throws MyException {
+        Box box = boxesRepository.getBox(plantId, lockerNumber, boxNumber);
+        if(box == null) throw new MyException("Brak szafki o takim numerze");
+        else return box;
     }
 
     public Box getBoxById(Long id) {

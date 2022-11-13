@@ -52,14 +52,6 @@ public class BoxController {
     }
 
     @JsonView(Views.InternalForBoxes.class)
-    @GetMapping("/get_box/{lockerNumber}/{boxNumber}/{plantNumber}")
-    public Box getBox(@PathVariable int lockerNumber,
-                      @PathVariable int boxNumber,
-                      @PathVariable int plantNumber) {
-        return boxesService.getBox(lockerNumber, boxNumber, plantNumber);
-    }
-
-    @JsonView(Views.InternalForBoxes.class)
     @GetMapping("/get-filtered/{plantId}/{departmentId}/{locationId}/{boxStatus}")
     public List<Box> getFiltered(@PathVariable long plantId,
                                  @PathVariable long departmentId,
