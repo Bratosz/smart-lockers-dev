@@ -1,7 +1,6 @@
 package pl.bratosz.smartlockers.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.sun.org.apache.xpath.internal.SourceTree;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -9,7 +8,10 @@ import pl.bratosz.smartlockers.model.*;
 import pl.bratosz.smartlockers.response.CreateResponse;
 import pl.bratosz.smartlockers.response.DataLoadedResponse;
 import pl.bratosz.smartlockers.response.StandardResponse;
-import pl.bratosz.smartlockers.service.*;
+import pl.bratosz.smartlockers.service.ClientService;
+import pl.bratosz.smartlockers.service.DepartmentService;
+import pl.bratosz.smartlockers.service.PlantService;
+import pl.bratosz.smartlockers.service.UserService;
 import pl.bratosz.smartlockers.service.exels.LoadType;
 
 import java.io.IOException;
@@ -35,6 +37,14 @@ public class ClientController {
         this.departmentService = departmentService;
         this.locationController = locationController;
         this.userService = userService;
+    }
+
+    @PostMapping("/clear-doubled-lockers/{plantId}/{fromId}/{toId}")
+    public boolean clearDoubledLockers(
+            @PathVariable long plantId,
+            @PathVariable long fromId,
+            @PathVariable long toId) {
+        return clientService.clearDoubledLockers(plantId, fromId, toId);
     }
 
     @JsonView(Views.ClientBasicInfo.class)

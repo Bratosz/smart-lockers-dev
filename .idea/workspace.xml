@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/repository/LockersRepository.java" line="96" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2c087550-e661-477b-b9b6-142d6614f300" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/BoxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/BoxController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/BoxService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/BoxService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/employee-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/employee-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/employee-edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/employee-edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/view-boxes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/view-boxes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/controller/BoxController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/controller/BoxController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/controller/EmployeeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/BoxService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/BoxService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/BoxService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/BoxService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/EmployeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/employee-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/employee-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/employee-edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/employee-edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/view-boxes.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/view-boxes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/LockerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/LockerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/repository/LockersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/repository/LockersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/LockerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/LockerService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,89 +40,123 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6183369">
+    <splitter split-orientation="horizontal" split-proportion="0.50852877">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/smart-lockers.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4266">
-                  <caret line="237" column="9" selection-start-line="237" selection-start-column="9" selection-end-line="237" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/resources/static/employee-edit.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
+                <state relative-caret-position="544">
                   <caret line="32" column="70" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="70" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/ClientController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="342">
+                  <caret line="46" selection-start-line="46" selection-end-line="46" />
                   <folding>
-                    <element signature="n#style#0;n#input#0;n#div#0;n#form#2;n#div#0;n#div#2;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#input#1;n#div#0;n#form#2;n#div#0;n#div#2;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#form#2;n#div#0;n#div#2;n#!!top" expanded="true" />
+                    <element signature="e#1876#1877#0" expanded="true" />
+                    <element signature="e#1930#1931#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/utils/utils.js">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ClientService.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="748">
-                  <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+                <state relative-caret-position="371">
+                  <caret line="195" selection-start-line="195" selection-end-line="195" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/employee-edit.js">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="8">
-                  <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
+                <state relative-caret-position="493">
+                  <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/EmployeeController.java">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/LockerController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="369">
-                  <caret line="184" column="34" selection-start-line="184" selection-start-column="34" selection-end-line="184" selection-end-column="34" />
+                <state relative-caret-position="474">
+                  <caret line="171" column="35" lean-forward="true" selection-start-line="171" selection-start-column="35" selection-end-line="171" selection-end-column="35" />
                   <folding>
-                    <element signature="e#8667#8668#0" expanded="true" />
+                    <element signature="e#6440#6441#0" expanded="true" />
+                    <element signature="e#6498#6499#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/EmployeeService.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="321">
-                  <caret line="409" column="38" selection-start-line="409" selection-start-column="38" selection-end-line="409" selection-end-column="38" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/BoxService.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="406">
-                  <caret line="70" column="83" selection-start-line="70" selection-start-column="83" selection-end-line="70" selection-end-column="83" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/model/orders/MainOrder.java">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/LockerService.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3315">
-                  <caret line="261" column="12" selection-start-line="261" selection-start-column="12" selection-end-line="261" selection-end-column="12" />
+                <state relative-caret-position="204">
+                  <caret line="60" column="64" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
                   <folding>
-                    <element signature="e#7114#7115#0" expanded="true" />
-                    <element signature="e#7160#7161#0" expanded="true" />
+                    <element signature="e#2406#2407#0" expanded="true" />
+                    <element signature="e#2467#2468#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/repository/LockersRepository.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-12">
+                  <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+                  <folding>
+                    <element signature="e#0#103#0" expanded="true" />
+                    <element signature="e#0#87#1" expanded="true" />
+                    <element signature="e#0#66#0" expanded="true" />
+                    <element signature="e#0#125#0" expanded="true" />
+                    <element signature="e#0#145#0" expanded="true" />
+                    <element signature="e#0#195#0" expanded="true" />
+                    <element signature="e#0#85#1" expanded="true" />
+                    <element signature="e#0#144#1" expanded="true" />
+                    <element signature="e#0#74#1" expanded="true" />
+                    <element signature="e#0#37#1" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/managers/EmployeeManager.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="188">
+                  <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/BoxService.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="321">
+                  <caret line="265" column="16" selection-start-line="265" selection-start-column="16" selection-end-line="265" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/model/Box.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
                 </state>
               </provider>
             </entry>
@@ -137,8 +164,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/repository/BoxesRepository.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="172">
-                  <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+                <state relative-caret-position="202">
+                  <caret line="70" lean-forward="true" selection-start-line="69" selection-start-column="15" selection-end-line="70" />
                   <folding>
                     <element signature="e#0#72#0" expanded="true" />
                     <element signature="e#0#274#0" expanded="true" />
@@ -154,33 +181,6 @@
                     <element signature="e#0#166#1" expanded="true" />
                     <element signature="e#0#162#1" expanded="true" />
                     <element signature="e#0#167#1" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/end-points.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="231">
-                  <caret line="334" column="9" selection-start-line="334" selection-start-column="9" selection-end-line="334" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/static/employee-edit.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-                  <folding>
-                    <element signature="n#style#0;n#input#0;n#div#0;n#form#2;n#div#0;n#div#2;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#input#1;n#div#0;n#form#2;n#div#0;n#div#2;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#form#2;n#div#0;n#div#2;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -202,7 +202,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>client</find>
       <find>update</find>
       <find>wymiana</find>
       <find>button-ex</find>
@@ -232,6 +231,7 @@
       <find>filtered</find>
       <find>getfil</find>
       <find>change-name</find>
+      <find>harddelete</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -240,11 +240,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/article-manager.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/articles.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/articles.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/cloth-manager.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/table-manager.js" />
         <option value="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/ClientArticleController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/navbar.html" />
         <option value="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/FileController.java" />
@@ -290,7 +285,12 @@
         <option value="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/EmployeeController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/employee-edit.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/employee-edit.js" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/ClientController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/repository/LockersRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/LockerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ClientService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/BoxService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/LockerService.java" />
       </list>
     </option>
   </component>
@@ -302,7 +302,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="976" />
     <option name="height" value="1056" />
@@ -645,7 +645,8 @@
       <workItem from="1667756196016" duration="3104000" />
       <workItem from="1668186665024" duration="12620000" />
       <workItem from="1668252290318" duration="6852000" />
-      <workItem from="1668363194046" duration="4798000" />
+      <workItem from="1668363194046" duration="4838000" />
+      <workItem from="1668449471418" duration="6711000" />
     </task>
     <servers />
   </component>
@@ -670,7 +671,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249440000" />
+    <option name="totallyTimeSpent" value="256191000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -686,16 +687,16 @@
       <window_info id="Web" order="7" sideWeight="0.14446227" side_tool="true" weight="0.21535982" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34561214" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.29577464" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.64788735" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3618635" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.16901408" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.24160346" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32997763" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
@@ -709,7 +710,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="10" side_tool="true" visible="true" weight="0.12686567" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="10" side_tool="true" weight="0.2457356" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -820,6 +821,30 @@
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ClientService.java</url>
+          <line>184</line>
+          <properties />
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/LockerService.java</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ClientService.java</url>
+          <line>195</line>
+          <properties />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/LockerService.java</url>
+          <line>59</line>
+          <properties />
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -830,6 +855,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>boxesService.getBoxById(1851l);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>getFiltered(1L,1L,0L, Box.BoxStatus.FREE)</expression-string>
         <language-id>JAVA</language-id>
@@ -871,76 +901,9 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>clothes.get(0).getClientArticle().equals(desiredClientArticle)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/smart-lockers-service-worker.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/model/Location.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/employees-pasting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/CreatingEmployeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/jgenderize/client/Genderize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.5.RELEASE/spring-web-5.1.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="197" selection-start-line="197" selection-end-line="197" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/utils/string/EmployeeNameAndGender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Program Files/Java/jdk1.8.0_301/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="543" column="6" selection-start-line="543" selection-start-column="6" selection-end-line="543" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/pasting/CreatingEmployeeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="59" column="34" lean-forward="true" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/utils/string/NameExtractor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1047,13 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/view-boxes-methods.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
@@ -1142,13 +1098,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/utils/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/model/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -1163,10 +1112,106 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/response/StandardResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="41" lean-forward="true" selection-start-column="41" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/smart-lockers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4029">
+          <caret line="237" column="9" selection-start-line="237" selection-start-column="9" selection-end-line="237" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/utils/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/employee-edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/EmployeeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2890">
+          <caret line="184" column="34" selection-start-line="184" selection-start-column="34" selection-end-line="184" selection-end-column="34" />
+          <folding>
+            <element signature="e#8616#8617#0" expanded="true" />
+            <element signature="e#8667#8668#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/end-points.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5678">
+          <caret line="334" column="9" selection-start-line="334" selection-start-column="9" selection-end-line="334" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/employee-edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="70" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/model/orders/MainOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="261" column="12" selection-start-line="261" selection-start-column="12" selection-end-line="261" selection-end-column="12" />
+          <folding>
+            <element signature="e#7114#7115#0" expanded="true" />
+            <element signature="e#7160#7161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/model/Box.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.5.RELEASE/spring-web-5.1.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/ClientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#1876#1877#0" expanded="true" />
+            <element signature="e#1930#1931#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/repository/BoxesRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        <state relative-caret-position="202">
+          <caret line="70" lean-forward="true" selection-start-line="69" selection-start-column="15" selection-end-line="70" />
           <folding>
             <element signature="e#0#72#0" expanded="true" />
             <element signature="e#0#274#0" expanded="true" />
@@ -1186,77 +1231,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/response/StandardResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/managers/EmployeeManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="41" lean-forward="true" selection-start-column="41" selection-end-column="41" />
+        <state relative-caret-position="188">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/end-points.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/model/Locker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="334" column="9" selection-start-line="334" selection-start-column="9" selection-end-line="334" selection-end-column="9" />
+        <state relative-caret-position="476">
+          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/smart-lockers.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/LockerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4266">
-          <caret line="237" column="9" selection-start-line="237" selection-start-column="9" selection-end-line="237" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/employee-edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="32" column="70" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="70" />
+        <state relative-caret-position="474">
+          <caret line="171" column="35" lean-forward="true" selection-start-line="171" selection-start-column="35" selection-end-line="171" selection-end-column="35" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#2;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#0;n#form#2;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#2;n#div#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/employee-edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/EmployeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="184" column="34" selection-start-line="184" selection-start-column="34" selection-end-line="184" selection-end-column="34" />
-          <folding>
-            <element signature="e#8667#8668#0" expanded="true" />
+            <element signature="e#6440#6441#0" expanded="true" />
+            <element signature="e#6498#6499#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/EmployeeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="409" column="38" selection-start-line="409" selection-start-column="38" selection-end-line="409" selection-end-column="38" />
+        <state relative-caret-position="180">
+          <caret line="295" column="28" selection-start-line="295" selection-start-column="28" selection-end-line="295" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/repository/LockersRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="e#0#103#0" expanded="true" />
+            <element signature="e#0#87#1" expanded="true" />
+            <element signature="e#0#66#0" expanded="true" />
+            <element signature="e#0#125#0" expanded="true" />
+            <element signature="e#0#145#0" expanded="true" />
+            <element signature="e#0#195#0" expanded="true" />
+            <element signature="e#0#85#1" expanded="true" />
+            <element signature="e#0#144#1" expanded="true" />
+            <element signature="e#0#74#1" expanded="true" />
+            <element signature="e#0#37#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ClientService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="195" selection-start-line="195" selection-end-line="195" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/BoxService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="70" column="83" selection-start-line="70" selection-start-column="83" selection-end-line="70" selection-end-column="83" />
+        <state relative-caret-position="321">
+          <caret line="265" column="16" selection-start-line="265" selection-start-column="16" selection-end-line="265" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/model/orders/MainOrder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/LockerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3315">
-          <caret line="261" column="12" selection-start-line="261" selection-start-column="12" selection-end-line="261" selection-end-column="12" />
+        <state relative-caret-position="204">
+          <caret line="60" column="64" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
           <folding>
-            <element signature="e#7114#7115#0" expanded="true" />
-            <element signature="e#7160#7161#0" expanded="true" />
+            <element signature="e#2406#2407#0" expanded="true" />
+            <element signature="e#2467#2468#0" expanded="true" />
           </folding>
         </state>
       </provider>

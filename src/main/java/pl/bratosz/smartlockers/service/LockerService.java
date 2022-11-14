@@ -7,16 +7,20 @@ import pl.bratosz.smartlockers.repository.LocationRepository;
 import pl.bratosz.smartlockers.repository.LockersRepository;
 import pl.bratosz.smartlockers.repository.PlantsRepository;
 import pl.bratosz.smartlockers.response.CreateResponse;
+import pl.bratosz.smartlockers.response.StandardResponse;
 import pl.bratosz.smartlockers.response.UpdateResponse;
-import pl.bratosz.smartlockers.service.managers.creators.LockerCreator;
 import pl.bratosz.smartlockers.service.exels.plant.template.data.PlantDataContainer;
 import pl.bratosz.smartlockers.service.exels.plant.template.data.TemplateLockers;
+import pl.bratosz.smartlockers.service.managers.creators.LockerCreator;
 import pl.bratosz.smartlockers.utils.Utils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
-import static pl.bratosz.smartlockers.model.Box.*;
+import static pl.bratosz.smartlockers.model.Box.BoxStatus;
 import static pl.bratosz.smartlockers.model.Box.BoxStatus.ALL;
 
 @Service
@@ -48,8 +52,18 @@ public class LockerService {
         this.plantsRepository = plantsRepository;
     }
 
-    public Locker deleteLockerByNumber(Long id) {
+    public Locker deleteLockerById(Long id) {
         return lockersRepository.deleteLockerById(id);
+    }
+
+    public StandardResponse deleteHardById(long lockerId) {
+        List<Box> boxes = boxesService.getByLocker(lockerId);
+        if(!boxes.isEmpty()) {
+            return StandardResponse.createForFailure("Szafka zawiera boxy, żeby ją usunąć najpierw skasuj boxy.");
+        } else {
+            lockersRepository.deleteHardById(lockerId);
+            return StandardResponse.createForSucceed("Usunięto szafę");
+        }
     }
 
     public Locker changeLocation(Integer lockerNumber, int plantNumber,

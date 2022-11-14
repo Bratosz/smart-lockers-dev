@@ -1,11 +1,15 @@
 package pl.bratosz.smartlockers.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Lock;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import pl.bratosz.smartlockers.model.*;
+import org.springframework.transaction.annotation.Transactional;
+import pl.bratosz.smartlockers.model.Department;
+import pl.bratosz.smartlockers.model.Location;
+import pl.bratosz.smartlockers.model.Locker;
+import pl.bratosz.smartlockers.model.Plant;
 
 import java.util.List;
 
@@ -86,4 +90,9 @@ public interface LockersRepository extends JpaRepository<Locker, Long> {
     List<Locker> getByPlantIdAndDepartmentIdAndLocationId(long plantId, long departmentId, long locationId);
 
     List<Locker> getByPlantIdAndDepartmentId(long plantId, long departmentId);
+
+    @Transactional
+    @Modifying
+    @Query("delete from Locker l where l.id = :id")
+    void deleteHardById(long id);
 }

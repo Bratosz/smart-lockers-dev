@@ -16,6 +16,7 @@ import pl.bratosz.smartlockers.service.exels.plant.template.data.PlantDataContai
 
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class ClientService {
@@ -33,6 +34,7 @@ public class ClientService {
     private LocationService locationService;
     private UserService userService;
     private EmployeesToCreateRepository employeesToCreateRepository;
+    private BoxService boxService;
 
     public ClientService(ClientRepository clientRepository,
                          EmployeesRepository employeesRepository,
@@ -41,7 +43,7 @@ public class ClientService {
                          UsersRepository usersRepository,
                          PlantService plantService,
                          EmployeeService employeeService,
-                         LockerService lockerService, ClientArticleService clientArticleService, PositionService positionService, DepartmentService departmentService, LocationService locationService, UserService userService, EmployeesToCreateRepository employeesToCreateRepository) {
+                         LockerService lockerService, ClientArticleService clientArticleService, PositionService positionService, DepartmentService departmentService, LocationService locationService, UserService userService, EmployeesToCreateRepository employeesToCreateRepository, BoxService boxService) {
         this.clientRepository = clientRepository;
         this.employeesRepository = employeesRepository;
         this.measurementListService = measurementListService;
@@ -56,6 +58,7 @@ public class ClientService {
         this.locationService = locationService;
         this.userService = userService;
         this.employeesToCreateRepository = employeesToCreateRepository;
+        this.boxService = boxService;
     }
 
     public CreateResponse create(String name) {
@@ -176,4 +179,22 @@ public class ClientService {
     }
 
 
+    public boolean clearDoubledLockers(long plantId, long fromId, long toId) {
+        List<Locker> lockers = lockersRepository.getAllByPlantId(plantId);
+
+        List<Locker> collect = lockers.stream()
+                .filter(l -> l.getId() >= fromId && l.getId() <= toId)
+                .collect(Collectors.toList());
+        collect.forEach(l -> {
+            l.getBoxes().forEach(b -> {
+                if(b.getBoxStatus().equals(Box.BoxStatus.OCCUPY)) {
+                    employeeService.dismissBy(true, b.getEmployee().getId(), 7);
+                }
+                boxService.hardDeleteBy(b.getId());
+            });
+        });
+        System.out.println("cokolwiek");
+        collect.forEach(l -> lockerService.deleteHardById(l.getId()));
+        return true;
+    }
 }

@@ -169,6 +169,6 @@ public class LockerController {
 
     @DeleteMapping("/deleteLockerById/{id}")
     public Locker deleteLockerByNumber(@PathVariable Long id) {
-        return lockersService.deleteLockerByNumber(id);
+        return lockersService.deleteLockerById(id);
     }
 }
