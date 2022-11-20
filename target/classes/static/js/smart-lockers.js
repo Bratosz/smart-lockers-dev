@@ -24,7 +24,6 @@ let loadedPositions;
 //keys
 let ctrlPressed = false;
 
-//employye
 let loadedEmployee;
 
 //clothes

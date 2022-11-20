@@ -1,9 +1,10 @@
 package pl.bratosz.smartlockers.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.web.bind.annotation.*;
+import pl.bratosz.smartlockers.model.Views;
 import pl.bratosz.smartlockers.response.StandardResponse;
 import pl.bratosz.smartlockers.service.pasting.CreatingEmployeeService;
-import pl.bratosz.smartlockers.service.pasting.employee.EmployeeToCreate;
 import pl.bratosz.smartlockers.service.pasting.employee.EmployeeToCreateData;
 import pl.bratosz.smartlockers.service.pasting.employee.PastedEmployeeEDPL;
 
@@ -21,17 +22,20 @@ public class CreatingEmployeeController {
     }
 
     @PostMapping
+    @JsonView(Views.InternalForEmployees.class)
     public StandardResponse createEmployees(@RequestBody List<EmployeeToCreateData> employeesData) {
         return creatingEmployeeService.createTheEmployees(employeesData);
     }
 
     @PostMapping("/add-employees-edpl/{userId}")
+    @JsonView(Views.InternalForEmployees.class)
     public StandardResponse addEmployeesEDPL(@PathVariable long userId, @RequestBody List<PastedEmployeeEDPL> employees) {
         return creatingEmployeeService.add(userId, employees);
     }
 
     @PostMapping("/set-department-position-location" +
             "/{departmentId}/{positionId}/{locationId}")
+    @JsonView(Views.InternalForEmployees.class)
     public StandardResponse setDepartmentPositionLocation(
             @PathVariable long departmentId,
             @PathVariable long positionId,
@@ -42,8 +46,9 @@ public class CreatingEmployeeController {
     }
 
     @PostMapping("/swap-names/{employeeId}")
-    public void swapNames(@PathVariable long employeeId) {
-        creatingEmployeeService.swapNames(employeeId);
+    @JsonView(Views.InternalForEmployees.class)
+    public StandardResponse swapNames(@PathVariable long employeeId) {
+        return creatingEmployeeService.swapNames(employeeId);
     }
 
 

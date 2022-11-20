@@ -93,6 +93,11 @@ function refreshRow(element, $row, writingMethod) {
     writingMethod(element, $row);
 }
 
+function refreshNames(employee, $row) {
+    $row.find('.cell-last-name').text(employee.lastName);
+    $row.find('.cell-first-name').text(employee.firstName);
+}
+
 function writeLockersWithSortingToTable(lockers, $table, writingMethod) {
     writeDataToTable(
         sort(lockers,
@@ -101,8 +106,6 @@ function writeLockersWithSortingToTable(lockers, $table, writingMethod) {
         $table,
         writingMethod);
 }
-
-
 
 function writeEmployeesWithSortingToTable(employees, $table, writingMethod) {
     writeDataToTable(

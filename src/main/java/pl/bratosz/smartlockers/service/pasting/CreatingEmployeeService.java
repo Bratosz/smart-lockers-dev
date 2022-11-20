@@ -133,13 +133,14 @@ public class CreatingEmployeeService {
         return employees;
     }
 
-    public void swapNames(long employeeId) {
-        EmployeeToCreate e = employeesToCreateRepository.getById(employeeId);
-        String firstName = e.getFirstName();
-        String lastName = e.getLastName();
-        e.setFirstName(lastName);
-        e.setLastName(firstName);
-        employeesToCreateRepository.save(e);
+    public StandardResponse swapNames(long employeeId) {
+        EmployeeToCreate employee = employeesToCreateRepository.getById(employeeId);
+        String firstName = employee.getFirstName();
+        String lastName = employee.getLastName();
+        employee.setFirstName(lastName);
+        employee.setLastName(firstName);
+        employee = employeesToCreateRepository.save(employee);
+        return StandardResponse.createForSucceed("Zmieniono imiona", employee);
     }
 }
 

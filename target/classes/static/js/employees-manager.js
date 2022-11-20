@@ -19,12 +19,13 @@ function getEmployeeIdFromRow($row) {
     return $row.attr('id');
 }
 
-function swapNames(employeeId) {
+function swapNames(employeeId, $row) {
     $.ajax({
         url: postSwapEmployeeNames(employeeId),
         method: 'post',
-        success: function () {
-            alert("Zamieiono imiona");
+        success: function (response) {
+            alert(response.message);
+            refreshRow(response.entity, $row, refreshNames);
         }
     })
 }

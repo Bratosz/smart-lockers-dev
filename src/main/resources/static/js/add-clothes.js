@@ -25,9 +25,9 @@ $('#button-edit-department-and-position').click(function () {
             method: 'post',
             success: function (response) {
                 if(response.succeed) {
-                    console.log("zmieniony")
-                    console.log(response.entity);
-                    displayEmployeeForAddClothesView(response.entity);
+                    let employee = response.entity;
+                    loadedEmployee = employee;
+                    displayEmployeeForAddClothesView(employee);
                 } else {
                     alert(response.message);
                 }

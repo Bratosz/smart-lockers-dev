@@ -109,9 +109,13 @@ function writeEmployeeToCreateToRow(employee, $row) {
         "Wybierz stanowisko");
     loadSelectInRowForEmployeeToCreate(
         $selectLocation, loadedClient.locations, employee.location, "Wybierz lokalizację");
-    // rowClickedBehaviour($row);
     $row.find('.button-swap-names').click(function () {
-       swapNames(employee.id);
+       swapNames(employee.id, $row);
+    });
+    $row.find('.select-department').change(function () {
+        let $selectDepartment = $row.find('.select-department');
+        let $selectPosition = $row.find('.select-position');
+        loadPositionsByDepartment($selectDepartment, $selectPosition);
     });
     return $row;
 }
