@@ -21,16 +21,49 @@
             </div>
             <div class="gap-vertical-20"></div>
 
+
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                Collapsible Group Item #1
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Link with href
+                </a>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Button with data-target
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
+            </div>
+
             <!--ORDERS TABLE-->
             <div class="container-table col-sm-12" id="div-orders" style="display: none">
                 <span>Zamówienia</span>
                 <table id="table-of-main-orders" class="table-striped">
                     <thead>
-                    <th>Id</th>
+                    <th>Szczegóły</th>
+                    <!--                    <th>Id</th>-->
                     <th>Rodzaj zamówienia</th>
-                    <th>Status zamówienia</th>
+                    <!--                    <th>Status zamówienia</th>-->
                     <th>Ilość sztuk</th>
-                    <th>Zmiana statusu
+                    <th>Zmiana statusu</th>
                     <th>Nowe ubranie</th>
                     <th>Rozmiar</th>
                     <th>Dł.</th>
@@ -38,9 +71,27 @@
                     </thead>
                     <tbody id="table-of-main-orders-body">
                     <tr id="row-template-main-order" style="display: none">
-                        <td class="cell-main-order-id"></td>
+                        <td>
+<!--                            <p>-->
+<!--                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample"-->
+<!--                                   role="button" aria-expanded="false" aria-controls="collapseExample">-->
+<!--                                    Link with href-->
+<!--                                </a>-->
+<!--                                <button class="btn btn-danger" type="button" data-bs-toggle="collapse"-->
+<!--                                        data-bs-target="#collapseExample" aria-expanded="false"-->
+<!--                                        aria-controls="collapseExample">-->
+<!--                                    Rozwiń-->
+<!--                                </button>-->
+<!--                            </p>-->
+<!--                            <div class="collapse" id="collapseExample">-->
+<!--                                <div class="card card-body">-->
+<!--                                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </td>
+                        <!--                        <td class="cell-main-order-id"></td>-->
                         <td class="cell-main-order-type"></td>
-                        <td class="cell-main-order-status"></td>
+                        <!--                        <td class="cell-main-order-status"></td>-->
                         <td class="cell-clothes-amount"></td>
                         <td class="cell-status-changed-date"></td>
                         <td class="cell-desired-article">
@@ -158,7 +209,6 @@
                     <label for="assignment-1">Przyjęcie odzieży</label>
                 </div>
                 <div class="gap-vertical-20"></div>
-                <span>Przyjęcie odzieży: </span>
                 <input id="input-barcode-cloth-assignment" class="input-field-medium align-right" type="number"/>
             </div>
 
@@ -208,18 +258,20 @@
                     <th>Kod kreskowy</th>
                     <th>Data wydania</th>
                     <th>W praniu</th>
+                    <th>Oddano do wymiany</th>
                     <th>\\</th>
                     </thead>
                     <tbody id="table-of-accepted-clothes-body">
                     <tr id="row-template-accepted-clothes" style="display: none">
                         <td class="cell-ordinal-number"></td>
-                        <td class="cell-clientArticle-number"></td>
-                        <td class="cell-clientArticle-name"></td>
+                        <td class="cell-article-number"></td>
+                        <td class="cell-article-name"></td>
                         <td class="cell-size"></td>
                         <td class="cell-assignment-date"></td>
                         <td class="cell-barcode"></td>
                         <td class="cell-release-date"></td>
                         <td class="cell-washing-date"></td>
+                        <td class="cell-acceptance-date"></td>
                         <td><input type="checkbox" class="clothToRelease-check-box"/></td>
                     </tr>
                     </tbody>

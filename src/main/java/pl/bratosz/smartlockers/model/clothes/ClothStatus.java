@@ -2,15 +2,10 @@ package pl.bratosz.smartlockers.model.clothes;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import pl.bratosz.smartlockers.model.Views;
-import pl.bratosz.smartlockers.model.clothes.Cloth;
-import pl.bratosz.smartlockers.model.clothes.ClothActualStatus;
-import pl.bratosz.smartlockers.model.clothes.ClothDestination;
 import pl.bratosz.smartlockers.model.users.User;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 public class ClothStatus {
@@ -24,6 +19,7 @@ public class ClothStatus {
     private ClothDestination clothDestination;
     @ManyToOne
     private User user;
+    @JsonView({Views.InternalForEmployees.class, Views.InternalForBoxes.class})
     private LocalDateTime dateOfUpdate;
     @ManyToOne
     private Cloth cloth;

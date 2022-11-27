@@ -39,7 +39,7 @@ function getEmployeesFromTableEDPL() {
         department = row.find('.input-department').val();
         position = row.find('.input-position').val();
         location = row.find('.input-location').val();
-        if(!empty(employeeName) || !empty(department) || !empty(position) || !empty(location)) {
+        if(!isEmpty(employeeName) || !isEmpty(department) || !isEmpty(position) || !isEmpty(location)) {
             return true;
         } else {
             return false;

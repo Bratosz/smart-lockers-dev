@@ -94,7 +94,7 @@ $('#button-relocate-employee-to-exact-box').click(function () {
     let plantId = $('#select-plant-for-exact-box').val(),
         lockerNumber = $('#input-locker-number').val(),
         boxNumber = $('#input-box-number').val();
-    if (empty(lockerNumber) || empty(boxNumber)) {
+    if (isEmpty(lockerNumber) || isEmpty(boxNumber)) {
         alert("Podaj pełny nr szafki");
     } else {
         $.ajax({

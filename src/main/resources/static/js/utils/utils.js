@@ -9,7 +9,7 @@ function getAndLoad(request, display) {
 }
 
 function formatDateDMY(date) {
-    if(date == null) {
+    if(isEmpty(date)) {
         return "";
     }
     date = date.substring(0, 10);
@@ -17,6 +17,19 @@ function formatDateDMY(date) {
         return "";
     } else {
         return date;
+    }
+}
+
+function formatDateDMYWithTime(date) {
+    if(isEmpty(date)) {
+        return "";
+    }
+    let DMY = date.substring(0, 10);
+    let time = date.substring(11,16);
+    if (DMY == "1970-01-01") {
+        return "";
+    } else {
+        return DMY + "\n" + time;
     }
 }
 
@@ -223,7 +236,7 @@ function setButtonAsClicked($clickedButton, $releasedButton, buttonType) {
     $releasedButton.addClass('btn-outline-' + buttonType);
 }
 
-function empty(v) {
+function isEmpty(v) {
     if(v == null || v == "" || v == undefined) {
         return true;
     } else {

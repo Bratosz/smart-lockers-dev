@@ -70,8 +70,18 @@ function writeClothToRow(cloth, $row) {
     $row.find(".cell-released-to-employee-date").text(formatDateDMY(
         cloth.releasedToEmployeeAsRotation));
     $row.find(".cell-washing-date").text(formatDateDMY(cloth.lastWashing));
+    $row.find('.cell-acceptance-date').text(formatDateDMYWithTime(getAcceptanceDate(cloth)));
     rowClickedBehaviour($row);
     return $row;
+}
+
+function getAcceptanceDate(cloth) {
+    let statusHistory = cloth.statusHistory;
+    if(statusHistory.length == 0) {
+        return "";
+    } else {
+        return statusHistory[0].dateOfUpdate;
+    }
 }
 
 function writeSize(cloth) {
