@@ -59,10 +59,9 @@ public class LockerCreator {
             Location location) {
         Locker l = new Locker();
         l.setLockerNumber(lockerNumber);
-        l.addBoxes(boxes
-        .stream()
-        .sorted(Comparator.comparing(box -> box.getBoxNumber()))
-        .collect(Collectors.toList()));
+        l.addBoxes(boxes.stream()
+                .sorted(Comparator.comparing(box -> box.getBoxNumber()))
+                .collect(Collectors.toList()));
         l.setCapacity(capacity);
         l.setPlant(plant);
         l.setDepartment(department);

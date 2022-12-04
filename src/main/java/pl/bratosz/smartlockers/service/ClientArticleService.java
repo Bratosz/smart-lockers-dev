@@ -155,7 +155,7 @@ public class ClientArticleService {
             try {
                 article = articleService.addNewArticle(articleNumber, articleName);
             } catch (MyException e) {
-                articleService.getExceptionalArticle(articleNumber, articleName);
+                article = articleService.getExceptionalArticle(articleNumber, articleName);
             }
         }
         Badge badge = badgeService.getByNumber(badgeNumber);

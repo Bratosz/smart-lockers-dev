@@ -10,6 +10,7 @@ import pl.bratosz.smartlockers.model.clothes.Cloth;
 import pl.bratosz.smartlockers.model.users.User;
 import pl.bratosz.smartlockers.repository.ClothesRepository;
 import pl.bratosz.smartlockers.scraping.Scrapper;
+import pl.bratosz.smartlockers.utils.Utils;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -252,37 +253,6 @@ public class ScrapingService {
                 scrapper.getMainTableBody());
     }
 
-//    private List<SimpleEmployee> updateClothes(Elements clothesRows, Plant plant) {
-//        Client client = plant.getClient();
-//        List<Cloth> updatedClothes = new LinkedList<>();
-//        List<SimpleEmployee> skippedEmployees = new LinkedList<>();
-//        Set<SimpleEmployee> doubledBoxes = new HashSet<>();
-//        SimpleEmployee actualEmployee;
-//        SimpleEmployee previousEmployee = getSimpleEmployee(clothesRows.first());
-//        for (Element row : clothesRows) {
-//            actualEmployee = getSimpleEmployee(row);
-//            if (!(previousEmployee.equals(actualEmployee))
-//                    || (row.equals(clothesRows.last()))) {
-//                if (row.equals(clothesRows.last())) {
-//                    updatedClothes.add(loadCloth(row, client));
-//                }
-//                try {
-//                    Employee employee = employeeService.getBy(previousEmployee, plant);
-//                    clothService.updateClothes(updatedClothes, employee, user);
-//                } catch (SkippedEmployeeException e) {
-//                    skippedEmployees.add(e.goToAndGetEmployeeBy());
-//                } catch (MultipleBoxException e) {
-//                    doubledBoxes.add(e.goToAndGetEmployeeBy());
-//                } finally {
-//                    updatedClothes.clear();
-//                }
-//            } else {
-//                updatedClothes.add(loadCloth(row, client));
-//            }
-//        }
-//        return skippedEmployees;
-//    }
-
     public SimpleEmployee getSimpleEmployee() {
         return getSimpleEmployee(
                 scrapper.getRow());
@@ -321,17 +291,7 @@ public class ScrapingService {
                 .stream()
                 .mapToInt(b -> b.getBoxNumber())
                 .max().orElse(10);
-        if (highestBoxNumber <= 10) {
-            return 10;
-        } else if (highestBoxNumber <= 20) {
-            return 20;
-        } else if (highestBoxNumber <= 30) {
-            return 30;
-        } else if (highestBoxNumber <= 40) {
-            return 40;
-        } else {
-            return 1000;
-        }
+        return Utils.roundUpTo(highestBoxNumber, 10);
     }
 
     private List<Element> sortBoxesRowsByLockerNumber(Elements boxesRows) {

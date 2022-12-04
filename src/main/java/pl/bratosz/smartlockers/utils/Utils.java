@@ -169,4 +169,14 @@ public class Utils {
         }
         return true;
     }
+
+    public static int roundUpTo(int toRound, int roundInterval) {
+        int modulo = toRound % roundInterval;
+        if(modulo == 0) {
+            return toRound;
+        } else {
+            int diff = roundInterval - modulo;
+            return toRound + diff;
+        }
+    }
 }

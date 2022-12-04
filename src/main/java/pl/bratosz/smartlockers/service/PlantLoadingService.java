@@ -2,8 +2,8 @@ package pl.bratosz.smartlockers.service;
 
 import org.jsoup.nodes.Element;
 import org.springframework.stereotype.Service;
-import pl.bratosz.smartlockers.exception.MultipleBoxException;
 import pl.bratosz.smartlockers.exception.EmptyElementException;
+import pl.bratosz.smartlockers.exception.MultipleBoxException;
 import pl.bratosz.smartlockers.exception.SkippedEmployeeException;
 import pl.bratosz.smartlockers.model.*;
 import pl.bratosz.smartlockers.model.clothes.Cloth;
@@ -13,7 +13,6 @@ import pl.bratosz.smartlockers.response.StandardResponse;
 import pl.bratosz.smartlockers.service.update.ClothesAndEmployeesToUpdate;
 import pl.bratosz.smartlockers.service.update.ScrapingService;
 
-import javax.xml.stream.events.StartDocument;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -86,7 +85,6 @@ public class PlantLoadingService {
     }
 
 
-
     public ClothesLoadedResponse loadAllClothes(long plantId) {
         List<Locker> lockers = lockerService.getAllBy(plantId);
         Plant plant = plantService.getById(plantId);
@@ -116,13 +114,13 @@ public class PlantLoadingService {
         Set<Box> boxes = boxService
                 .getBoxesFromRange(lockerNumber, startingBoxNumber, endBoxNumber, plant);
         scrapingService.connectToBoxesView(plant);
-        for(Box box : boxes) {
+        for (Box box : boxes) {
             try {
                 simpleEmployee = scrapingService
                         .goToAndGetEmployeeBy(box);
                 Employee employee = employeeService
                         .getBy(simpleEmployee, plant);
-                if(employee.getClothes().isEmpty()) {
+                if (employee.getClothes().isEmpty()) {
                     scrapingService.loadBox();
                     List<Cloth> clothes = scrapingService
                             .getClothesAsRotational(client);
@@ -156,7 +154,7 @@ public class PlantLoadingService {
     public StandardResponse updateClothes(long plantId) {
         Plant plant = plantService.getById(plantId);
         User user = userService.getDefaultUser();
-        if(plant.getLastUpdate().isBefore(LocalDate.now())) {
+        if (plant.getLastUpdate().isBefore(LocalDate.now())) {
             ClothesAndEmployeesToUpdate clothesAndEmployees =
                     scrapingService.getClothesAndEmployeesToUpdate(plant);
             System.out.println("clothes to update: " + clothesAndEmployees.getUpdatedClothes().size());
@@ -189,17 +187,17 @@ public class PlantLoadingService {
         int lockerNumber;
         int loadedEmployees = 0;
         scrapingService.connectToBoxesView(plant);
-        for(Locker l : lockers) {
+        for (Locker l : lockers) {
             lockerNumber = l.getLockerNumber();
             scrapingService.goToLocker(lockerNumber);
             List<Element> boxesRows = scrapingService.getBoxesRows();
-            for(Element row : boxesRows) {
+            for (Element row : boxesRows) {
                 SimpleEmployee simpleEmployee =
                         scrapingService.getSimpleEmployee(row);
                 try {
                     Employee employee = employeeService.getBy(
                             simpleEmployee, plant);
-                    if(employee.getClothes().size() > 0) continue;
+                    if (employee.getClothes().size() > 0) continue;
                     scrapingService.loadBox(row);
                     List<Cloth> clothes = scrapingService.getClothes(employee);
                     clothService.loadClothes(clothes, employee, user);
@@ -236,12 +234,12 @@ public class PlantLoadingService {
         List<Box> boxes = new LinkedList<>();
         Employee employee;
         int previousLockerNumber = scrapingService.getFirstLockerNumber(boxesRows);
-        for(int i = 0; i < boxesRows.size(); i++) {
+        for (int i = 0; i < boxesRows.size(); i++) {
             row = boxesRows.get(i);
             lockerNumber = scrapingService.getLockerNumber(row);
-            if ((previousLockerNumber != lockerNumber) ||
-                    (i == boxesRows.size() - 1)) {
-                if (i == boxesRows.size() - 1) {
+            if (isThisNextLocker(lockerNumber, previousLockerNumber) ||
+                    isThisLastRow(boxesRows, i)) {
+                if (isThisLastRow(boxesRows, i)) {
                     SimpleEmployee simpleEmployee =
                             scrapingService.getSimpleEmployee(row);
                     employee = employeeService.createEmployee(simpleEmployee, clientId);
@@ -270,6 +268,14 @@ public class PlantLoadingService {
             }
         }
         return lockers.size();
+    }
+
+    private boolean isThisLastRow(List<Element> boxesRows, int i) {
+        return i == boxesRows.size() - 1;
+    }
+
+    private boolean isThisNextLocker(int lockerNumber, int previousLockerNumber) {
+        return previousLockerNumber != lockerNumber;
     }
 
 

@@ -232,7 +232,7 @@ public class LockerService {
     public Locker getBy(long lockerId) {
         Locker locker = lockersRepository.getLockerById(lockerId);
         List<Box> boxes = locker.getBoxes().stream()
-                .limit(50)
+                .limit(200)
                 .collect(Collectors.toList());
         locker.setBoxes(boxes);
         return locker;

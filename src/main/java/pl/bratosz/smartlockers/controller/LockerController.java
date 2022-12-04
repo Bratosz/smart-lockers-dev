@@ -106,7 +106,7 @@ public class LockerController {
                 locationId);
     }
 
-    @PostMapping("/createWithDepartmentPositionAndLocation" +
+    @PostMapping("/create" +
             "/{startingLockerNumber}" +
             "/{endLockerNumber}" +
             "/{capacity}" +

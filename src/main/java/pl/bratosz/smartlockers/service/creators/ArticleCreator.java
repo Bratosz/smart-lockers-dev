@@ -36,8 +36,8 @@ public class ArticleCreator {
     }
 
     private void validateArticleNumber(int articleNumber) throws MyException {
-        if(articleNumber < 1000 || articleNumber > 9999) {
-            throw new MyException("Numer artykułu musi być > 999 i < 10000");
+        if(articleNumber < 100 || articleNumber > 9999) {
+            throw new MyException("Numer artykułu musi być > 99 i < 10000");
         } else {
             Article article = articleService.getByArticleNumber(articleNumber);
             if(article != null) {
@@ -48,7 +48,7 @@ public class ArticleCreator {
     }
 
     private void validateArticleName(String articleName) throws MyException {
-        if(articleName.length() < 5) {
+        if(articleName.length() < 3) {
             throw new MyException("Nazwa jest za krótka");
         }
     }
