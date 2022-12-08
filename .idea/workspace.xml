@@ -15,8 +15,15 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/update/ScrapingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/update/ScrapingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/utils/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/add-lockers.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/add-lockers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/controller/LockerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/controller/LockerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/ClientArticleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/ClientArticleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/LockerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/LockerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/PlantLoadingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/PlantLoadingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/creators/ArticleCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/creators/ArticleCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/managers/creators/LockerCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/managers/creators/LockerCreator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/update/ScrapingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/service/update/ScrapingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/bratosz/smartlockers/utils/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/add-lockers.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/add-lockers.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/end-points.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="5406">
               <caret line="318" column="9" selection-start-line="318" selection-start-column="9" selection-end-line="318" selection-end-column="9" />
             </state>
           </provider>
@@ -59,12 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/LockerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="123" column="33" lean-forward="true" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="33" />
-              <folding>
-                <element signature="e#6440#6441#0" expanded="true" />
-                <element signature="e#6498#6499#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1853">
+              <caret line="123" column="33" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -72,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/scraping/Scrapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="2329">
               <caret line="165" column="20" selection-start-line="165" selection-start-column="20" selection-end-line="165" selection-end-column="20" />
             </state>
           </provider>
@@ -90,7 +93,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/LockerService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
+            <state relative-caret-position="2397">
               <caret line="164" column="38" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
             </state>
           </provider>
@@ -99,7 +102,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/managers/creators/LockerCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
+            <state relative-caret-position="238">
               <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
             </state>
           </provider>
@@ -109,7 +112,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/add-lockers.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -117,7 +120,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ClientArticleService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
+            <state relative-caret-position="2397">
               <caret line="157" column="26" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
             </state>
           </provider>
@@ -127,7 +130,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/view-locker.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -135,7 +138,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ArticleService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
+            <state relative-caret-position="646">
               <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
               <folding>
                 <element signature="e#807#808#0" expanded="true" />
@@ -405,7 +408,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Default Changelist'; set:Default Changelist; class com.intellij.packageDependencies.ChangeListScope">
           <expand>
@@ -462,6 +464,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -645,6 +648,7 @@
       <workItem from="1669743497268" duration="3287000" />
       <workItem from="1670163323299" duration="2818000" />
       <workItem from="1670179591302" duration="4487000" />
+      <workItem from="1670184129354" duration="131000" />
     </task>
     <servers />
   </component>
@@ -669,12 +673,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283346000" />
+    <option name="totallyTimeSpent" value="283477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8555377" visible="true" weight="0.21481876" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8555377" visible="true" weight="0.21695095" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -690,7 +694,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.24160346" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" visible="true" weight="0.24160346" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3763326" side_tool="true" weight="0.34236187" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32936078" />
@@ -1244,20 +1248,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ArticleService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/end-points.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
-          <folding>
-            <element signature="e#807#808#0" expanded="true" />
-            <element signature="e#869#870#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="5406">
+          <caret line="318" column="9" selection-start-line="318" selection-start-column="9" selection-end-line="318" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/LockerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1853">
+          <caret line="123" column="33" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/scraping/Scrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2329">
+          <caret line="165" column="20" selection-start-line="165" selection-start-column="20" selection-end-line="165" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/LockerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="164" column="38" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/managers/creators/LockerCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/add-lockers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ClientArticleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
+        <state relative-caret-position="2397">
           <caret line="157" column="26" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
         </state>
       </provider>
@@ -1265,53 +1300,18 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/view-locker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/end-points.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/ArticleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="318" column="9" selection-start-line="318" selection-start-column="9" selection-end-line="318" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/add-lockers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/scraping/Scrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="165" column="20" selection-start-line="165" selection-start-column="20" selection-end-line="165" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/controller/LockerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="123" column="33" lean-forward="true" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="33" />
+        <state relative-caret-position="646">
+          <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
           <folding>
-            <element signature="e#6440#6441#0" expanded="true" />
-            <element signature="e#6498#6499#0" expanded="true" />
+            <element signature="e#807#808#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/LockerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="164" column="38" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/bratosz/smartlockers/service/managers/creators/LockerCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
         </state>
       </provider>
     </entry>
