@@ -21,43 +21,95 @@
             </div>
             <div class="gap-vertical-20"></div>
 
+
             <!--ORDERS TABLE-->
-            <div class="container-table col-sm-12" id="div-orders" style="display: none">
-                <span>Zamówienia</span>
-                <table id="table-of-main-orders" class="table-striped">
-                    <thead>
-                    <!--                    <th>Szczegóły</th>-->
-                    <th>Id</th>
-                    <th>Rodzaj zamówienia</th>
-                    <!--                    <th>Status zamówienia</th>-->
-                    <th>Ilość sztuk</th>
-                    <th>Zmiana statusu</th>
-                    <th>Nowe ubranie</th>
-                    <th>Rozmiar</th>
-                    <th>Dł.</th>
-                    <th></th>
-                    </thead>
-                    <tbody id="table-of-main-orders-body">
-                    <tr id="row-template-main-order" style="display: none">
-                        <td class="cell-main-order-id"></td>
-                        <td class="cell-main-order-type"></td>
-                        <!--                        <td class="cell-main-order-status"></td>-->
-                        <td class="cell-clothes-amount"></td>
-                        <td class="cell-status-changed-date"></td>
-                        <td class="cell-desired-article">
-                            <select class="form-control select-article-in-orders-table"
-                                    style="display: none; font-size: 10px;"></select>
-                        </td>
-                        <td class="cell-desired-size">
-                            <input type="text" class="input-size input-field-medium-small">
-                        </td>
-                        <td class="cell-length-modification">
-                            <input type="text" class="input-length-modification input-field-medium-small">
-                        </td>
-                        <td><input type="checkbox" class="check-box-main-order"/></td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div class="col-md-12" id="div-orders" style="display: none">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Zamówienia
+                    </div>
+                    <div class="panel-body">
+                        <table id="table-of-main-orders" class="table table-condensed table-striped">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Rodzaj zamówienia</th>
+                                <th>Ilość sztuk</th>
+                                <th>Zaktualizowano</th>
+                                <th>Nowe ubranie</th>
+                                <th>Rozmiar</th>
+                                <th>Dł.</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </thead>
+
+                            <!--ROW TEMPLATE MAIN ORDER-->
+                            <tr id="row-template-main-order" style="display: none">
+                                <td class="cell-main-order-id"></td>
+                                <td class="cell-main-order-type"></td>
+                                <td class="cell-clothes-amount"></td>
+                                <td class="cell-status-changed-date"></td>
+                                <td class="cell-desired-article">
+                                    <select class="form-control select-article-in-orders-table"
+                                            style="display: none; font-size: 10px;"></select>
+                                </td>
+                                <td class="cell-desired-size">
+                                    <input type="text" class="input-size input-field-medium-small">
+                                </td>
+                                <td class="cell-length-modification">
+                                    <input type="text" class="input-length-modification input-field-medium-small">
+                                </td>
+                                <td>
+                                    <button data-toggle="collapse" data-target="#template"
+                                            type="button" class="accordion-toggle btn btn-outline-danger view-button"
+                                            style="font-size: 12px;">
+                                        Pokaż
+                                    </button>
+                                </td>
+                                <td><input type="checkbox" class="check-box-main-order"/></td>
+                            </tr>
+
+                            <!--ROW TEMPLATE COLLAPSABLE CLOTH ORDERS-->
+                            <tr id="row-template-collapsable-cloth-orders" style="display: none">
+                                <td colspan="12" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="div-collapsable">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr class="info">
+                                                <th>Lp</th>
+                                                <th>Artykuł</th>
+                                                <th>Nazwa artykułu</th>
+                                                <th>Rozmiar</th>
+                                                <th>Aktualny status</th>
+                                                <th>Data</th>
+                                                <th>Kod kreskowy</th>
+                                            </tr>
+                                            </thead>
+
+                                            <!--ROW TEMPLATE-->
+                                            <tr id="row-template-cloth-order"
+                                                style="display: none">
+                                                <td class="cell-ordinal-number"></td>
+                                                <td class="cell-article-number"></td>
+                                                <td class="cell-article-name"></td>
+                                                <td class="cell-size"></td>
+                                                <td class="cell-actual-status"></td>
+                                                <td class="cell-status-update"></td>
+                                                <td class="cell-barcode"></td>
+                                            </tr>
+
+                                            <tbody id="table-of-cloth-orders-body"></tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tbody id="table-of-main-orders-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
                 <!--ORDERS MANAGING-->
                 <div>
                     <div class="side-menu">
@@ -70,6 +122,46 @@
                     <div class="gap-vertical-20"></div>
                 </div>
             </div>
+
+            <!--ORDERS TABLE-->
+            <!--            <div class="container-table col-sm-12" id="div-orders" style="display: none">-->
+            <!--                <span>Zamówienia</span>-->
+            <!--                <table id="table-of-main-orders" class="table-striped">-->
+            <!--                    <thead>-->
+            <!--                    &lt;!&ndash;                    <th>Szczegóły</th>&ndash;&gt;-->
+            <!--                    <th>Id</th>-->
+            <!--                    <th>Rodzaj zamówienia</th>-->
+            <!--                    &lt;!&ndash;                    <th>Status zamówienia</th>&ndash;&gt;-->
+            <!--                    <th>Ilość sztuk</th>-->
+            <!--                    <th>Zmiana statusu</th>-->
+            <!--                    <th>Nowe ubranie</th>-->
+            <!--                    <th>Rozmiar</th>-->
+            <!--                    <th>Dł.</th>-->
+            <!--                    <th></th>-->
+            <!--                    </thead>-->
+
+            <!--                    <tbody id="table-of-main-orders-body">-->
+            <!--                    <tr id="row-template-main-order" style="display: none">-->
+            <!--                        <td class="cell-main-order-id"></td>-->
+            <!--                        <td class="cell-main-order-type"></td>-->
+            <!--                        &lt;!&ndash;                        <td class="cell-main-order-status"></td>&ndash;&gt;-->
+            <!--                        <td class="cell-clothes-amount"></td>-->
+            <!--                        <td class="cell-status-changed-date"></td>-->
+            <!--                        <td class="cell-desired-article">-->
+            <!--                            <select class="form-control select-article-in-orders-table"-->
+            <!--                                    style="display: none; font-size: 10px;"></select>-->
+            <!--                        </td>-->
+            <!--                        <td class="cell-desired-size">-->
+            <!--                            <input type="text" class="input-size input-field-medium-small">-->
+            <!--                        </td>-->
+            <!--                        <td class="cell-length-modification">-->
+            <!--                            <input type="text" class="input-length-modification input-field-medium-small">-->
+            <!--                        </td>-->
+            <!--                        <td><input type="checkbox" class="check-box-main-order"/></td>-->
+            <!--                    </tr>-->
+            <!--                    </tbody>-->
+            <!--                </table>-->
+            <!--            </div>-->
 
             <!--EMPLOYEE ACTIVE CLOTHES-->
             <div class="container-table" id="div-clothes-active" style="display:none">

@@ -27,6 +27,7 @@ public class OrderStatus {
     private ActionType actionPerformed;
 
     @JsonView(Views.Public.class)
+    @Column(columnDefinition = "dateTime")
     private Date dateOfUpdate;
 
     @ManyToOne

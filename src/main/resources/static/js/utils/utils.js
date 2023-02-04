@@ -244,5 +244,10 @@ function isEmpty(v) {
     }
 }
 
+function getLastFromArray(array) {
+    let length = array.length;
+    return array[length - 1];
+}
+
 const allElementsAreEqual = array => array.every(e => e === array[0]);
 

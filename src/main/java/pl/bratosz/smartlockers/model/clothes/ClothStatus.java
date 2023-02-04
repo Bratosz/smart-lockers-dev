@@ -13,16 +13,23 @@ public class ClothStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @JsonView({Views.InternalForEmployees.class, Views.InternalForBoxes.class})
     private ClothActualStatus status;
+
     @JsonView({Views.InternalForEmployees.class, Views.InternalForBoxes.class})
     private ClothDestination clothDestination;
+
     @ManyToOne
     private User user;
+
     @JsonView({Views.InternalForEmployees.class, Views.InternalForBoxes.class})
+    @Column(columnDefinition = "dateTime")
     private LocalDateTime dateOfUpdate;
+
     @ManyToOne
     private Cloth cloth;
+
     private AdditionalStatusInfo additionalStatusInfo;
 
     public ClothStatus() {

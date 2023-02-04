@@ -429,7 +429,7 @@ function displayWithdrawnClothes(clothes) {
 function displayOrders(mainOrders) {
     if (mainOrders.length > 0) {
         $('#div-orders').css('display', 'inline');
-        writeOrdersToTable($("#table-of-main-orders-body"), mainOrders);
+        writeOrdersToTable($("#table-of-main-orders"),$("#table-of-main-orders-body"), mainOrders);
     } else {
         $('#div-orders').css('display', 'none');
     }
